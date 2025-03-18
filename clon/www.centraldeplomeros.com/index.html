@@ -1,0 +1,2354 @@
+<!doctype html >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es"
+      class="">
+<head>
+    <meta charset="utf-8">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.centraldeplomeros.com/',
+        AccountUUID: '47d67d40fffc4a82901c07b00565cf6f',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: '30bf6a54',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Fri Jan 24 20:01:57 UTC 2025',
+        ExternalUid: '413094601',
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialPostPageUuid: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'home',
+        InitialPageUuid: '1003e47146524210b0c3ee04c62cdc1f',
+        InitialPageId: '1169863041',
+        InitialEncodedPageAlias: 'aG9tZQ==',
+        InitialHeaderUuid: 'e82393a61c294ce2be8c0c83afd0dac9',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: true,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '38230',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: 'null',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '',
+        StoreId: 'null',
+        StoreVersion: 0,
+        StoreBaseUrl: '',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'LEFT',
+        currentLanguage: 'es',
+        currentLocale: 'es',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://www.centraldeplomeros.com/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: true,
+        planID: '1951',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false,
+        defaultLang: 'es',
+        hamburgerMigration: null,
+        isFlexSite : false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<link rel="canonical" href="index.html">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/30bf6a54/site_favicon_16_1737748915601.ico"/>
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/"/>
+
+
+
+<!-- render the required CSS and JS in the head section -->
+<script id='d-js-dmapi'>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            },
+            runOnReady: (ns, fn) => {
+                const safeFn = dmAPI.toSafeFn(fn);
+                ns = ns || 'global_' + Math.random().toString(36).slice(2, 11);
+                const eventName = 'afterAjax.' + ns;
+
+                if (document.readyState === 'complete') {
+                    $.DM.events.off(eventName).on(eventName, safeFn);
+                    setTimeout(function () {
+                        safeFn({
+                            isAjax: false,
+                        });
+                    }, 0);
+                } else {
+                    window?.waitForDeferred?.('dmAjax', () => {
+                        $.DM.events.off(eventName).on(eventName, safeFn);
+                        safeFn({
+                            isAjax: false,
+                        });
+                    });
+                }
+            },
+            toSafeFn: (fn) => {
+                if (fn?.safe) {
+                    return fn;
+                }
+                const safeFn = function (...args) {
+                    try {
+                        return fn?.apply(null, args);
+                    } catch (e) {
+                        console.log('function failed ' + e.message);
+                    }
+                };
+                safeFn.safe = true;
+                return safeFn;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+body #dm #\31 756147004:not(.photo-gallery-done):not([data-widget-initialized]) { height: 48.0px !important; min-height: initial;}
+body #dm #\31 833219150:not(.photo-gallery-done):not([data-widget-initialized]) { height: 25.0px !important; min-height: initial;}
+</style>
+<style id="cssVariables" type="text/css">
+    :root {
+  --color_1: rgba(224, 66, 66, 1);
+  --color_2: rgba(255, 183, 31, 1);
+  --color_3: rgba(66, 66, 66, 1);
+  --color_4: rgba(26, 13, 15, 1);
+  --color_5: rgba(255, 255, 255, 1);
+  --color_6: rgba(28,35,52,1);
+  --color_7: rgba(255, 255, 255, 1);
+  --color_8: rgba(0, 0, 0, 1);
+}
+</style>
+
+<!-- ========= JS Section ========= -->
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "SPANISH"
+    window.isSitePreview = false;
+</script>
+<script>
+    window.customWidgetsFunctions["2b6e491ddb1a42ec9d783bc8f175b4f3~80"] = function (element, data, api) {
+        
+
+
+
+
+if (data.inEditor) {
+    
+    
+    
+    var Wnumero = data.config.PhoneWhatsapp;
+
+    if (Wnumero == "") {
+        
+        
+      $(".contenedorGralWP").html( "<p class='nohay'> No hay número WhatsApp </p>" );
+    
+    }
+        
+    
+    
+    
+} else {
+    //do something regular if outside editor
+}
+    };
+</script>
+<script>
+    window.customWidgetsFunctions["1f5975986930429f819d4cd2154b5c4a~22"] = function (element, data, api) {
+        null
+    };
+</script>
+<script>
+    window.customWidgetsFunctions["40c66a42282346528f5c8ed4ab86df81~41"] = function (element, data, api) {
+        
+function stripHtml(html)
+{
+   let tmp = document.createElement("DIV");
+   tmp.innerHTML = html;
+   return tmp.textContent || tmp.innerText || "";
+}
+
+function isHTML(str) {
+    var doc = new DOMParser().parseFromString(str, "text/html");
+    return Array.from(doc.body.childNodes).some(node => node.nodeType === 1);
+}
+
+function extractContent(s) {
+  var span = document.createElement('span');
+  span.innerHTML = s;
+  
+  return String(span.textContent || span.innerText).replace(/Esto es un indicador de posición y no aparecerá en el sitio activo./g, "")
+};
+
+
+var el_address = document.getElementById('address');
+const address = String(extractContent(data.config.widgetaddress_serviceAddress || "")) 
+
+var el_city = document.getElementById('city');
+const city = String(extractContent(data.config.widgetaddress_serviceArea || "")) 
+
+var el_state = document.getElementById('state');
+const state = String(extractContent(data.config.widgetaddress_serviceState || "")) 
+
+var text = ""
+
+//console.log(state.length, city.length, address)
+
+//console.log(address, city, state)
+
+if(city.length!=0 || state.length!=0){
+    //console.log("cobertura")
+    text = "Área de cobertura: " + city + ", " + state
+} else {
+    //console.log("direccion")
+    text =  address
+}
+//console.log(text)
+/*var el_area = document.getElementById('area');
+const area = (extractContent(el_area.innerText || el_area.textContent)) */
+
+
+const container = document.getElementById(data.elementId)
+$(container).find('#area').text(text)
+
+//console.log($(container).find('#area'))
+
+//document.getElementById('area').textContent=text;
+
+//console.log(area)
+
+    };
+</script>
+<script>
+    window.customWidgetsFunctions["e7c808927dac456e86b919971f23fd58~29"] = function (element, data, api) {
+        
+
+if(data.config.Oxxo)
+ {
+     document.getElementById("payment_Oxxo").style.display = 'inline-block';
+ }
+ 
+  if(data.config.spei)
+ {
+     document.getElementById("payment_spei").style.display = 'inline-block';
+ }
+ if(data.config.claro)
+ {
+     document.getElementById("payment_claro").style.display = 'inline-block';
+ }
+  if(data.config.samsung)
+ {
+     document.getElementById("payment_samsung").style.display = 'inline-block';
+ }
+  if(data.config.codi)
+ {
+     document.getElementById("payment_codi").style.display = 'inline-block';
+ }
+  if(data.config.apple)
+ {
+     document.getElementById("payment_apple").style.display = 'inline-block';
+ }
+  if(data.config.baz)
+ {
+     document.getElementById("payment_baz").style.display = 'inline-block';
+ }
+ if(data.config.mercado)
+ {
+     document.getElementById("payment_mercado").style.display = 'inline-block';
+ }
+  if(data.config.seven)
+ {
+     document.getElementById("payment_seven").style.display = 'inline-block';
+ }
+ 
+   if(data.config.carnet)
+ {
+     document.getElementById("payment_carnet").style.display = 'inline-block';
+ }
+ 
+//console.log("Input with variable name text1 value is: ",data.config.cheque);
+dmAPI.loadCollectionsAPI().then(api => {
+    api.data("SITE_INFORMATION")
+    .select('payment_options')
+        .get()
+        .then(json => 
+            {
+               // console.log("formas de pago activas: ",json.values[0].data.payment_options);
+                displayImageList(json.values[0].data.payment_options);
+                //json.values[0].data.payment_options
+            })
+})
+
+var displayImageList = function(listData) {
+
+    for (var i=0; i< listData.length; i++) {
+        // console.log("forma de pago  ",listData[i]);
+     switch (listData[i])
+       {
+            case 'visa':
+               document.getElementById("payment_Visa").style.display = 'inline-block';
+               data.config.Visa=1;
+               break;
+            case 'mastercard':
+                document.getElementById("payment_Mastercard").style.display = 'inline-block';
+               break;
+            case 'vouchers':
+                document.getElementById("payment_Vales").style.display = 'inline-block';
+               break;
+            case 'credit_card':
+                document.getElementById("payment_credito").style.display = 'inline-block';
+               break;
+            case 'paypal':
+                document.getElementById("payment_Paypal").style.display = 'inline-block';
+               break;
+            case 'cash':
+                 document.getElementById("payment_Efectivo").style.display = 'inline-block';
+               break;
+            case 'american_express':
+                document.getElementById("payment_American").style.display = 'inline-block';
+               break;
+            case 'money_transfer':
+                 document.getElementById("payment_Transferencia").style.display = 'inline-block';              
+               break;
+            case 'deposit':
+                document.getElementById("payment_Deposito").style.display = 'inline-block';
+               break;
+            case 'personal_checks':
+                document.getElementById("payment_cheque").style.display = 'inline-block';
+               break;
+            case 'debit_cards':
+                 document.getElementById("payment_payment_options_debit_cards").style.display = 'inline-block';
+               break;
+            
+       }
+    }
+       
+    
+}
+
+
+
+
+/* para manipular posición*/
+
+
+if (data.inEditor) {
+    /*
+	$(document).ready(function(){
+  $(".moviendose").sortable();
+});
+*/
+
+
+// $('.sortees').each(function(i,t){
+//   or = $(this).attr('id').split('_')[1]
+//   console.log('order i >> '+arrValuesForOrder);
+//   $(this).css('order',or);
+// })
+
+
+
+    
+
+} else {
+    
+    $("#clear").hide();
+	//do something regular if outside editor
+}
+
+
+
+
+
+    };
+</script>
+<script>
+    window.customWidgetsFunctions["66dae1a547a54519bca9bd0a2d88885c~32"] = function (element, data, api) {
+        null
+    };
+</script>
+<script>
+    window.customWidgetsFunctions["97c9bf9e0ac64c119b09859d80205367~7"] = function (element, data, api) {
+        null
+    };
+</script>
+<script>
+    window.customWidgetsFunctions["17621d8856184b11a7828ff5eb1a9ea9~1"] = function (element, data, api) {
+        null
+    };
+</script>
+<script>
+    window.customWidgetsFunctions["7e51f0343e5846baaf0b80a6f8e0f774~291"] = function (element, data, api) {
+        
+let Url = String(window.location).toLowerCase();
+console.log("url: ",Url);
+console.log("includes: ", Url.includes(String(data.siteId).toLowerCase()));
+console.log("preview: ",  Url.includes(String("preview").toLowerCase()));
+/*no quitar*/
+if (data.inEditor || Url.includes(String(data.siteId).toLowerCase()) ) 
+{
+     element.querySelector('#btnWidgetVer').style.display = 'block';
+     element.querySelector('#btn_engage').style.display = 'block';
+} else 
+{
+    //do something regular if outside editor
+      element.querySelector('#btnWidgetVer').style.display = 'none';
+      element.querySelector('#btn_engage').style.display = 'none';
+}
+ 
+$('.close').on('click', function(e){
+        e.preventDefault(); 
+        $(this).parent().hide();
+});
+
+$(document).ready(function () 
+{
+    $('.floating-engage').on('click', function(e){
+        e.preventDefault(); 
+        $('.form-popup').hide();
+        $('#scheduler').show();
+    });
+    
+    $('#btnSaveEngage').on('click', function(e)
+    {
+        e.preventDefault(); 
+        myFunc(1);
+    });
+
+});
+
+
+    
+function myFunc(ab) { 
+    
+        dmAPI.loadCollectionsAPI().then(api => {
+        api.data("SITE_INFORMATION")
+        .select('opening_hours','engage_options','full_crm','engage_position','drop_down')
+            .get()
+            .then(json => 
+                {
+                    console.log("ENTRA EDITOR"); 
+                    
+                    let my_engage_position = '';
+                    try{
+                        my_engage_position = json.values[0].data.engage_position;
+                        console.log("engage_position: ",my_engage_position);
+                    } catch (error) {
+                        console.log("Error position: ",error); 
+                    }
+                    
+                    let my_drop_down = '';
+                    try{
+                        my_drop_down = json.values[0].data.drop_down;
+                        console.log("fdrop_down: ",my_drop_down);
+                    } catch (error) {
+                        console.log("Error fdrop_down: ",error); 
+                    }
+                    
+                    let my_full_crm = '';
+                    try
+                    {
+                        my_full_crm = json.values[0].data.full_crm;
+                        console.log("full crm: ",my_full_crm);
+                    } catch (error) {
+                        console.log("Error: CRM: ",error); 
+                    }
+                    
+                    let myJSONHours = '';
+                    let myHours = JSON.stringify({
+                            "dayId": "{{id}}",
+                            "closedDay": new Boolean(false),
+                            "hours":[
+                                {
+                                    "startTime": "{{start}}",
+                                    "endTime": "{{end}}"
+                                }
+                            ]
+                        });
+                    try {
+                        let arr_opening_hours = JSON.parse( json.values[0].data.opening_hours );
+                        console.log("horas activas: ",arr_opening_hours);
+                        if(arr_opening_hours != null)
+                        {
+                            for (var i=0; i< arr_opening_hours.length; i++) 
+                            {
+                                console.log("day: ", arr_opening_hours[i].days[0]);
+                                switch (arr_opening_hours[i].days[0])
+                                {
+                                    case 'MON':
+                                       myJSONHours += (i > 0 ? ',' : '') + myHours.replace('{{id}}', '2').replace('{{start}}', arr_opening_hours[i].open).replace('{{end}}', arr_opening_hours[i].close);
+                                    break;
+                                    case 'TUE':
+                                       myJSONHours += (i > 0 ? ',' : '') + myHours.replace('{{id}}', '3').replace('{{start}}', arr_opening_hours[i].open).replace('{{end}}', arr_opening_hours[i].close);
+                                    break;
+                                    case 'WED':
+                                       myJSONHours += (i > 0 ? ',' : '') + myHours.replace('{{id}}', '4').replace('{{start}}', arr_opening_hours[i].open).replace('{{end}}', arr_opening_hours[i].close);
+                                    break;
+                                     case 'THU':
+                                        myJSONHours += (i > 0 ? ',' : '') + myHours.replace('{{id}}', '5').replace('{{start}}', arr_opening_hours[i].open).replace('{{end}}', arr_opening_hours[i].close);
+                                    break;
+                                     case 'FRI':
+                                        myJSONHours += (i > 0 ? ',' : '') + myHours.replace('{{id}}', '6').replace('{{start}}', arr_opening_hours[i].open).replace('{{end}}', arr_opening_hours[i].close);
+                                    break;
+                                    case 'SAT':
+                                       myJSONHours += (i > 0 ? ',' : '') + myHours.replace('{{id}}', '7').replace('{{start}}', arr_opening_hours[i].open).replace('{{end}}', arr_opening_hours[i].close);
+                                    break;
+                                    case 'SUN':
+                                        myJSONHours += (i > 0 ? ',' : '') + myHours.replace('{{id}}', '1').replace('{{start}}', arr_opening_hours[i].open).replace('{{end}}', arr_opening_hours[i].close);
+                                    break;
+                                }
+                            }
+                        }
+                    } catch (error) {
+                        console.log("Error: horario",error); 
+                    }
+                    
+                    let btnWhatsApp = false;
+                    let btnRetornoDeLlamada = false;
+                    let btnReservaEnLinea = false;
+                    let btnContactanos = false;
+                    let btnCRM = false;
+                    if(my_full_crm)
+                    {
+                        btnCRM = ( my_full_crm === 'YES' ? true : false );
+                    }
+                    try {
+                        let arr_engage_options = json.values[0].data.engage_options;
+                        console.log("engage activas: ", arr_engage_options);
+                        if(arr_engage_options != null)
+                        {
+                            for (var i=0; i< arr_engage_options.length; i++) 
+                            {
+                                switch (arr_engage_options[i])
+                                {
+                                case 'Retorno de Llamada':
+                                   btnRetornoDeLlamada = true;
+                                   break;
+                                case 'Reserva en Linea':
+                                   btnReservaEnLinea = true;
+                                   break;
+                                case 'WhatsApp':
+                                   btnWhatsApp = true;
+                                   break;
+                                case 'Contactanos':
+                                   btnContactanos = true;
+                                   break;
+                                }
+                            }
+                            if(btnCRM===true)
+                            {
+                                btnWhatsApp = false;
+                                btnRetornoDeLlamada = false;
+                                btnReservaEnLinea = false;
+                                btnContactanos = false;          
+                            }
+                        }
+                    } catch (error) {
+                        console.log("Error: Botones", error); 
+                    }
+                    
+                    
+                    let container = element.querySelector('.floating-engage');
+                    const css_obj_cal = getComputedStyle(container);
+                    let container2 = element.querySelector('.buttonCaption');
+                    const css_obj = getComputedStyle(container2);
+                    let container3 = element.querySelector('.ui-widget-header');
+                    const css_obj_cld = getComputedStyle(container3);
+                    let container4 = element.querySelector('.floating-engage  svg');
+                    const css_obj_btn = getComputedStyle(container4);
+                     
+                    console.log("WA: ", data.config.numero_whatsapp);
+                    let numero_wa = '';
+                    if(data.config.codigo_pais)
+                    {
+                        numero_wa =  String(data.config.codigo_pais) + String(data.config.numero_whatsapp).replace("521","") 
+                    }else
+                    {
+                        numero_wa = String(data.config.numero_whatsapp);
+                    }
+                    
+                    let myJSON = JSON.stringify({
+                                    "bcProduct": dmAPI.getSiteExternalId(),
+                                    "siteName": String(data.siteId),
+                                    "posEngage": String(my_engage_position), 
+                                    "dispEngage": String(my_drop_down), 
+                                    "Origin": "Engage ADSA",
+                                    "engage": {
+                                        "buttonBGColor": css_obj_cal.backgroundColor,
+                                        "buttonColor": css_obj_btn.fill,
+                                        "buttonFont": css_obj.fontFamily,
+                                        "toolTipBGColor": css_obj.backgroundColor,
+                                        "toolTipColor": css_obj.color,
+                                        "toolTipFont": css_obj.fontFamily,
+                                        "WhatsApp": {
+                                            "Number" : String(numero_wa),
+                                            "Message" : String(data.config.mensaje_whatsapp).replace('<p class=\"rteBlock\">', '').replace('</p>', ''),
+                                            "caption": "WhatsApp",
+                                            "active": new Boolean(btnWhatsApp)
+                                        },
+                                        "RetornoDeLlamada": 
+                                        {
+                                            "caption": "Retorno de llamada",
+                                            "active": new Boolean(btnRetornoDeLlamada),
+                                            "timeAppointment": String(data.config.numero_intervalos),
+                                            "scheduler":{
+                                                "openingDays": [
+                                                    "{{hour}}"
+                                                ]
+                                            }
+                                        },
+                                        "ReservaEnLinea": 
+                                        {
+                                            "caption": "Reserva en linea",
+                                            "active": new Boolean(btnReservaEnLinea),
+                                            "timeAppointment": String(data.config.numero_intervalos),
+                                            "scheduler":{
+                                                "openingDays": [
+                                                   "{{hour}}"
+                                                ]
+                                            }
+                                        },
+                                        "Contactanos": 
+                                        {
+                                            "caption": "Contáctanos",
+                                            "active": new Boolean(btnContactanos)
+                                        }
+                                    },
+                                    "calendario": {
+                                        "calendarBGColor": css_obj_cld.backgroundColor,
+                                        "calendarColor": css_obj_cld.color,
+                                        "calendarFont": css_obj_cld.fontFamily
+                                    }
+                                });
+                          
+                           myJSON =  myJSON.replace('"{{hour}}"', myJSONHours).replace('"{{hour}}"', myJSONHours)
+                           console.log("myJSON3: ", myJSON);
+                           
+                           var settings = {
+                            "url": "https://minegocio.seccionamarilla.com.mx/interacciones/api/control/configuration",
+                            "method": "POST",
+                            "timeout": 0,
+                            "headers": { "Authorization": "Basic " + btoa("admin:xui54n8w") , "Content-Type": "application/json"},
+                            "data": myJSON
+                            };
+                            $.ajax(settings).done(function (response) {
+                                console.log(response);
+                                if(response.success===true){
+                                     alert(response.responseText);
+                                }else{
+                                     alert('no podemos procesar su solicitud.');
+                                }
+                            });
+                });
+            });
+};
+
+   
+$(function(){
+  $("#datepicker").datepicker({
+    maxDate:  new Date(),
+    minDate: new Date(),
+    dateFormat: 'MM yy',
+    constrainInput: true,
+    prevText: '<',
+    nextText: ' >',
+    format: "d-m-Y",
+    showMonthAfterYear: false,
+    dayNamesMin: ['D','L','M','M','J','V','S'],
+    onClose: function(dateText, inst) { 
+        var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+        var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+        $(this).datepicker('setDate', new Date(year, month, 1));
+    }
+
+  });
+});
+    };
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_5257";
+    var build = "2025-03-09T11_48_27";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2025-03-09T11_48_27";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id='d-js-jquery'
+        src="https://static.cdn-website.com/libs/jquery/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id='d-js-params'>
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/5257';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/5257';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.respectCssAnimationProps.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+
+    
+    rtCommonProps['common.mapsProvider'] = 'google';
+    
+    rtCommonProps["google.places.key"] = 'AIzaSyAuL7Fex_oUVH77ZC9h99ZeeCsSfMYLrMI';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'google';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =true;
+
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["site.runtime.video.background.ssr"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.storefrontV3.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =true;
+    rtFlags["facebook.runtime.widgets.upgrade"] =true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["site.contact.form.fix.for.attribute"] =true;
+    rtFlags["contact.form.date.format.enabled"] = true;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["runtime.load.script.native"] =true;
+    rtFlags["editor.classicHybrid.photogallery.fix"] =true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+    rtFlags["feature.flag.notifications.push.from.top"] =true;
+    rtFlags["streamline.monolith.personalization.supportMultipleConditions.enabled"] =false;
+    rtFlags["runtime.cwv.report.cls.enabled"] =true;
+    rtFlags["flex.runtime.popup.with.show"] =true;
+    rtFlags["contact.form.useActiveForm"] =true;
+</script>
+<script src="https://static.cdn-website.com/mnlt/production/5257/_dm/s/rt/dist/scripts/d-js-one-runtime-unified-desktop.min.js"  id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="https://static.cdn-website.com/mnlt/production/5257/_dm/s/rt/dist/scripts/d-js-jquery-migrate.min.js" ></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+
+
+
+<style id="hideAnimFix">
+  .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+    visibility: hidden !important;
+  }
+
+  
+  #dmRoot:not(.editGrid) .flex-element [data-anim-extended] {
+    visibility: hidden;
+  }
+
+  
+</style>
+
+
+
+<style id="criticalCss">
+    @charset "UTF-8";.display_None,.dmPopupMask{display:none}@font-face{font-family:Roboto;font-style:normal;font-weight:100;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v47/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v47/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Verdana;font-style:normal;font-weight:400;src:local("Verdana"),url(https://dd-cdn.multiscreensite.com/fonts/additionalfonts/28f652d19e80fbde11.woff) format("woff");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215;font-display:swap}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7l.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v47/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-weight:400;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/poppins/v22/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v47/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v47/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Poppins;font-style:normal;font-weight:700;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/poppins/v22/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Roboto;font-style:normal;font-weight:900;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/roboto/v47/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Cabin;font-style:normal;font-weight:400 700;font-stretch:100%;font-display:swap;src:url(https://irp.cdn-website.com/fonts/s/cabin/v27/u-4i0qWljRw-PfU81xCKCpdpbgZJl6Xvqdns.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}:root{--color_1:rgba(224, 66, 66, 1);--color_2:rgba(255, 183, 31, 1);--color_3:rgba(66, 66, 66, 1);--color_4:rgba(26, 13, 15, 1);--color_5:rgba(255, 255, 255, 1);--color_6:rgba(28,35,52,1);--color_7:rgba(255, 255, 255, 1);--color_8:rgba(0, 0, 0, 1)}.dmInner{min-height:100vh!important;position:relative}.dmPopup,.dmPopupMask{position:fixed;left:0}.dmDisplay_None{display:none!important}.clearfix:after{clear:both;visibility:hidden;line-height:0;height:0}.clearfix:after,.clearfix:before{content:' ';display:table}.clearfix{display:inline-block}.dmDesktopBody .shadowEffectToChildren li{box-shadow:none!important}#dm .dmWidget .icon{font-size:26px}body.dmRoot #dm .dmOuter .dmInner .dmWidget .icon.hasFontIcon{height:26px;margin-top:-13px;line-height:normal;text-align:center;background-image:none}.dmRoot .hasFontIcon{background-image:none!important}.dmPopupMask{margin:0;width:10px;z-index:1000000999;top:0}#dmRoot .dmPopup{display:block}.dmPopup{text-align:left;top:10px;width:93%;z-index:1000009999!important;box-sizing:border-box;background:#f5f5f5;overflow-y:auto;height:100%;display:block}.dmPopup .dmPopupTitle{text-align:left;font:700 19px Helvetica,Arial;margin:20px 20px 35px;color:#999}#dmPopup{opacity:0}.dmPopupClose,.dmPopupClose:before{position:absolute;visibility:visible}.dmPopupClose{border-radius:25px;width:27px;height:27px;z-index:1;background-color:rgba(255,255,255,.4);top:12px;right:12px}.dmPopupClose:before{display:block;font-size:20px;color:#000;top:3px;right:3px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar{width:5px;height:5px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-thumb{background:#c8c8c8;box-shadow:inset 0 1px 2px #454545;border-radius:45px}.dmRespRow.fullBleedMode>.dmRespColsWrapper{width:100%!important;max-width:100%!important}.dmRespRow.fullBleedMode{padding-left:0!important;padding-right:0!important}#dm .dmRespRow .dmRespColsWrapper{display:flex}.align-center{margin-left:auto;margin-right:auto}.text-align-center{text-align:center}body.fix-mobile-scrolling{overflow:initial}#dmRoot{text-decoration-skip-ink:none}.dmform-title{padding-right:15px;padding-left:15px}[data-flex-id]{position:relative}[data-flex-id][data-layout-section]{min-height:32px}.flex-widgets-container{display:none}[data-layout-grid]{display:-ms-grid;display:grid;justify-content:start;align-items:start;-ms-grid-columns:minmax(0,1fr);grid-template-columns:minmax(0,1fr);-ms-grid-rows:minmax(8px,max-content);grid-template-rows:minmax(8px,-webkit-max-content);grid-template-rows:minmax(8px,max-content)}[data-layout-grid]>.flex-element.group{display:flex;flex-direction:row;justify-content:flex-start;align-items:center;justify-self:center;align-self:start;order:0;max-width:1200px}[data-layout-grid],[data-layout-grid]>.flex-element.group,[data-layout-grid]>.flex-element.group>.flex-element.group{background-size:cover;background-repeat:no-repeat;background-position:50% 50%;position:relative}[data-layout-grid]>.flex-element.group>.flex-element.group{display:flex;flex-direction:column;max-width:100%;align-self:stretch;justify-content:center;align-items:flex-start}.flex-element.widget-wrapper{position:relative;min-width:10px;min-height:10px}#dm [data-flex-id] .widget-wrapper>[data-element-type]{width:100%;height:100%;margin:0;padding:0}[data-flex-id] .widget-wrapper [data-element-type=image] img,[data-flex-id] .widget-wrapper [data-element-type=image] img[width][height]{object-fit:cover;width:100%;height:100%}[data-flex-id] .flex-element.grid>.flex-element{-ms-grid-column:1;grid-column-start:1;-ms-grid-column-span:1;grid-column-end:span 1;-ms-grid-row:1;grid-row-start:1;-ms-grid-row-span:1;grid-row-end:span 1}body{-webkit-overflow-scrolling:touch}nav,section{display:block}html{font-family:Source Sans Pro;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}h1{font-size:2em;margin:.67em 0}b{font-weight:700}hr{box-sizing:content-box;height:0}img{border:0;max-width:100%;-ms-interpolation-mode:bicubic;display:inline-block}svg:not(:root){overflow:hidden}button,input{font-family:inherit;font-size:100%;margin:0;line-height:normal}button{text-transform:none;-webkit-appearance:button}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}*,:after,:before{box-sizing:border-box}.dmRespRow.dmRespRowNoPadding{padding:0}.dmRespRow{padding-top:15px;padding-bottom:15px}.dmRespRow:after,.dmRespRow:before{content:' ';display:table}.dmRespRow:after{clear:both}.dmRespRow,.dmRespRow .dmRespColsWrapper{max-width:960px;position:relative;margin:0 auto;width:100%}.dmRespRow .dmRespCol{position:relative;width:100%;display:inline-block;vertical-align:top;float:left}.dmRespRow .dmRespCol>*{max-width:100%}.dmDesktopBody .dmRespRow .large-4{position:relative;width:33.33333%}.dmDesktopBody .dmRespRow .large-12{position:relative;width:100%}[class*=' dm-common-icons-']{speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:dm-common-icons!important}.dm-common-icons-close:before{content:'\e901'}#dm div.dmContent [class*=' icon-'],[class*=' icon-']{font-family:FontAwesome!important;font-weight:400;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased}[class*=' icon-']:before{text-decoration:none;display:inline-block;speak:none}a [class*=' icon-']{display:inline}[class*=' icon-']{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}.icon-star:before{content:'\f005'}@media (max-width:767px){#dm .dmInner .dmWidget{width:100%}}#dm .dmInner .dmWidget:not(.displayNone){display:inline-block}#dm .dmInner .dmWidget{text-decoration:none;margin:10px 0;clear:both;position:relative;text-align:center;line-height:22px;box-shadow:none;background-image:none;padding:0;height:auto;border-style:solid;white-space:nowrap}#dm .dmInner .dmWidget:after{content:'';display:inline-block;height:100%;vertical-align:middle;width:0;margin-right:-.25em}#dm .dmInner .dmWidget .iconBg{position:absolute;left:0;width:50px;top:50%;margin-top:-13px}#dm .dmWidget .text{display:inline-block;vertical-align:middle;font-size:1.125em;line-height:normal;white-space:normal;padding:10px 7px;max-width:98%}.dmInner{min-width:768px!important}.dmPhotoGallery .dmPhotoGalleryHolder .photoGalleryThumbs .image-container{height:100%}.dmPhotoGallery .dmPhotoGalleryHolder .photoGalleryThumbs{width:58px;height:58px;margin:2px;display:inline-block;vertical-align:middle;text-align:center;overflow:hidden}.dmPhotoGalleryResp.dmPhotoGallery .dmPhotoGalleryHolder .photoGalleryThumbs img{box-shadow:0 0 3px #888}.dmPhotoGalleryResp.dmPhotoGallery .dmPhotoGalleryHolder .photoGalleryThumbs{margin:0;padding:10px}.dmPhotoGalleryHolder{text-align:center}.dmPhotoGallery .dmPhotoGalleryHolder .photoGalleryThumbs img{display:inline!important;margin:0!important;vertical-align:middle;text-align:center;position:relative}.dmPhotoGallery .image-container{position:relative}#dm .dmPhotoGallery.newPhotoGallery li.photoGalleryThumbs .caption-container .caption-inner div,#dm .dmPhotoGallery.newPhotoGallery li.photoGalleryThumbs .caption-container .caption-inner h3,.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner{text-align:center}.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner h3{margin:0;line-height:normal;font-size:21px}.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-text,.dmPhotoGallery.newPhotoGallery .photoGalleryThumbs .caption-container .caption-inner .caption-title{max-width:100%}#dm .dmPhotoGallery.newPhotoGallery li{list-style:none}#dm .dmPhotoGallery.newPhotoGallery li.photoGalleryThumbs .caption-container .caption-inner{align-items:center;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;z-index:1;background-color:rgba(255,255,255,.9);color:#333;padding:15px;height:100%;box-sizing:border-box}#dm .dmPhotoGallery.newPhotoGallery .photoGalleryViewAll{box-shadow:0 0!important;font-size:inherit!important;margin:0!important}#dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder{width:100%;padding:0;display:none}#dm .dmPhotoGallery.newPhotoGallery li.photoGalleryThumbs{position:relative}#dm .dmPhotoGallery.newPhotoGallery li.photoGalleryThumbs .image-container{overflow:hidden}#dm .dmPhotoGallery.newPhotoGallery li.photoGalleryThumbs .image-container a{background-repeat:no-repeat;background-position:center}#dm .dmPhotoGallery.newPhotoGallery li.photoGalleryThumbs .caption-container .caption-inner .caption-button{margin:10px auto;max-width:100%}#dm .dmPhotoGallery.newPhotoGallery li.photoGalleryThumbs .caption-container .caption-inner .caption-button .text{padding:10px 20px!important}.dmNewParagraph[data-version]{line-height:initial}.dmNewParagraph[data-version] .text-align-left{text-align:left!important}.dmNewParagraph[data-version] .text-align-center{text-align:center!important}.dmNewParagraph[data-version] h1,.dmNewParagraph[data-version] h2,.dmNewParagraph[data-version] p{margin-top:0;margin-bottom:0}@media (max-width:767px){.dmRoot .dmNewParagraph[data-version] .m-text-align-left{text-align:left!important}.dmRoot .dmNewParagraph[data-version] .m-text-align-center{text-align:center!important}}#dm div.dmInner .dmform[data-layout=layout-1] .dmforminput>:not(label):not(div):not(small):not(.frc-banner){background:0;border:2px solid #000;display:inline-block}.imageWidget{position:relative}.imageWidget a{font-style:italic;text-align:center}.imageWidget img[width][height]{height:auto}.widget-2b6e49{min-width:100px;width:170px;min-height:35px;position:relative;text-align:left}.widget-2b6e49 *{margin:0;text-decoration:none}.btnDisenotres,.btnDisenotres span{border:none!important;margin:0!important;color:#000!important}.btnDisenotres span,a{text-decoration:none!important}.widget-2b6e49 .text{padding:0!important}.btnDisenotres{background-color:rgba(0,0,0,0)!important;display:inline-flex!important;flex-direction:row;align-items:center;text-align:left!important;padding:10px 1px;width:100%!important;height:100%!important;position:absolute!important;justify-content:flex-start!important;top:0;left:0!important}.btnDisenotres span{padding:0!important}.iconoDisenotres{width:25px;height:25px;margin-right:10px;min-height:20px;min-width:20px;max-height:120px;max-width:120px}.payment-methods .caja-method{display:inline-block;margin:10px;text-align:center}.payment-methods .caja-method .method{display:flex;justify-content:center;align-items:center;width:100%;height:25px}.payment-methods .caja-method .method svg{height:100%}.payment-methods .caja-method p{font-size:11px;text-align:center}.phoneConteiner a{display:flex;align-items:center;height:auto;text-decoration:none;color:#000!important}.phoneConteiner a label{margin:0!important}.icono-phone{height:25px;width:25px;display:flex;margin-right:10px;text-align:center;align-items:center}.icono-phone svg{height:100%;width:100%}.generalPhones{width:100%;min-height:20px;display:flex;gap:3px}html:not(.ios-preview) #dm .hasStickyHeader .dmInner div.dmHeaderContainer{position:fixed!important;z-index:1;width:100%;min-width:768px}.texto_naranja_widgetengage{color:#ff7e00}.interactPluginX *{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}.interactPluginX .engage_icons{position:fixed;top:50px;right:15px;z-index:999998}.interactPluginX .floating-engage{-ms-box-shadow:0 0 3px 1px rgba(230,232,230,.5);-moz-box-shadow:0 0 3px 1px rgba(230,232,230,.5);-webkit-box-shadow:0 0 3px 1px rgba(230,232,230,.5);box-shadow:0 0 3px 1px rgba(230,232,230,.5);-ms-border-radius:100px;border-radius:100px;margin-top:350px;padding:14px;position:relative;top:3px;width:20px;height:20px;background-color:#484848}.interactPluginX .engage_icons .buttonCaption{margin-left:15px;display:none;font-size:12px;vertical-align:middle}.interactPluginX .engage_icons.floatingType .buttonCaption{display:none;top:10px;white-space:nowrap;position:absolute;right:80px;padding:5px 15px;-ms-border-radius:10px;border-radius:10px}.card,.col-md-6{position:relative}.interactPluginX{line-height:18px}@media only screen and (max-width:500px){.interactPluginX .engage_icons .floating-engage{padding:12px}}.buttonCaption{background-color:#484848;color:#fff}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:initial;margin-right:-15px;margin-left:-15px}.col-md-6{width:100%;padding-right:15px;padding-left:15px}.card{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;min-width:0;word-wrap:break-word;background-color:#fafafa57;background-clip:border-box;border:1px solid rgba(0,0,0,.125);border-radius:12px;padding:10px}.form-popup{z-index:999999;position:fixed;background-color:#fff;padding:20px;border-radius:10px;top:40%;left:50%;transform:translate(-50%,-35%);display:none;max-width:100%;box-shadow:rgb(149 157 165 / 20%) 0 8px 24px}#dm .dmRespRow.dmRespRowNoPadding,.dmContent,.dmInner ul:not(.defaultList),DIV.dmBody{padding:0}label{display:inline-block;margin-bottom:.5rem}.close{position:absolute;top:5px;right:5px;font-size:20px;font-weight:700;color:#000!important}#innerBar,#iscrollBody,#site_content,.dmHeader{position:relative}img[width][height]{height:auto}*{border:0 solid #333;scrollbar-arrow-color:#fff;scrollbar-track-color:#F2F2F2;scrollbar-face-color:silver;scrollbar-highlight-color:silver;scrollbar-3dlight-color:silver;scrollbar-shadow-color:silver;scrollbar-darkshadow-color:silver;scrollbar-width:12px}body{width:100%;overflow:hidden;-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important}A IMG{border:none}h1,h2,h3,ul{margin-left:0;margin-right:0}.dmInner *{-webkit-font-smoothing:antialiased}.clearfix,a,img,li,ul{vertical-align:top}.dmOuter{word-wrap:break-word}.dmInner{font-size:16px;background:#fff;color:#666}.dmDesktopBody .dmInner{min-width:960px}.dmInner a{color:#463939}.dmHeader{background:#68ccd1;color:#666;text-align:center;width:100%;max-width:100%}DIV.dmBody{clear:both}.dmContent{margin:0}#site_content ul:not(.defaultList){-webkit-padding-start:0;-moz-padding-start:0;list-style-position:inside}#innerBar{height:36px;width:100%;font-size:20px;margin:0;z-index:80}.dmRespRowsWrapper{max-width:960px;margin:0 auto}.dmRespCol>[dmle_extension]:not(:first-child){margin-top:10px}.dmLargeBody .imageWidget:not(.displayNone){display:inline-block;max-width:100%}.imageWidget:not(.displayNone) img{width:100%}h3{font-weight:400;font-size:23px}#dm .dmRespColsWrapper{display:block}.dmNewParagraph{text-align:left;margin:8px 0;padding:2px 0}.dmLargeBody .fHeader .dmRespRow .dmRespCol{padding-left:.75%;padding-right:.75%}.dmLargeBody .fHeader .dmRespRow .dmRespCol:first-child{padding-left:0;padding-right:1.5%}.dmLargeBody .fHeader .dmRespRow .dmRespCol:last-child{padding-right:0;padding-left:1.5%}#innerBar.lineInnerBar{display:table;width:100%;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;font-size:20px;margin-top:30px;margin-bottom:30px;background-color:transparent;color:#666}#innerBar .titleLine{display:table-cell;vertical-align:middle;width:50%}.dmPageTitleRow:not(#innerBar){display:none}.titleLine hr{min-height:1px;background-color:rgba(102,102,102,.2)}.dmStandardDesktop{display:block}.standardHeaderLayout .dmHeader{float:none}#dmFirstContainer .dmRespRowsWrapper:after,#dmFirstContainer .dmRespRowsWrapper:before{content:"";display:table}.dmInner a{outline:0;vertical-align:inherit}.dmLinksMenu>ul{display:block;margin:0;font-size:inherit}.dmStandardDesktop{margin:0 auto}#dm h3.dmwidget-title[hide=true]{display:none}#dm .dmwidget-title{margin:10px 0;font-size:23px;text-shadow:none;text-align:left;text-transform:capitalize;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;word-wrap:normal}.dmPhotoGalleryHolder{font-size:medium!important;margin:0;list-style:none}#dm .dmPhotoGallery .dmPhotoGalleryHolder,#dm .dmPhotoGallery .dmPhotoGalleryHolder>li{width:100%;padding:0}#dm .dmPhotoGallery .dmPhotoGalleryHolder .photoGalleryThumbs{background:url(https://dd-cdn.multiscreensite.com/runtime-img/galleryLoader.gif) 50% 50% no-repeat #eee;float:left;clear:none;padding:0;margin:0;width:100%}#dm .dmPhotoGallery .dmPhotoGalleryHolder .photoGalleryThumbs img{display:none!important}.dmDesktopBody .dmPhotoGallery .photoGalleryViewAll{background:0 0;border:none;padding:3px 0;font-size:16px;width:auto;height:auto;line-height:normal;box-shadow:0 -2px 0 0;display:block;margin:40px 0;text-align:left}body{background-color:#eee}.dmPhotoGallery:not(.dmFacebookGallery) .dmPhotoGalleryHolder:not(.ready) li.photoGalleryThumbs{display:inline!important;visibility:hidden}[dmle_extension=custom_extension] .dmWidget{width:150px;padding:0 7px}.main-navigation.unifiednav{display:flex;justify-content:flex-start;align-items:stretch;overflow:visible}.main-navigation.unifiednav ul{list-style:none;padding:0;margin:0;font-size:1rem}.main-navigation.unifiednav .unifiednav__container{display:flex;justify-content:flex-start;list-style:none}.main-navigation.unifiednav.effect-text-color{padding:12px 15px}.main-navigation.unifiednav:not(.unifiednav_vertical)>.unifiednav__container{justify-content:inherit}#dm .p_hfcontainer nav.main-navigation.unifiednav{min-width:9em!important;text-align:initial!important}#dm .main-navigation.unifiednav:not([data-nav-structure=VERTICAL])>.unifiednav__container{flex-wrap:wrap;justify-content:inherit}.main-navigation.unifiednav_empty{display:none}#dm .dmBody .dmRespRowsWrapper{max-width:none;background-color:transparent}.dmLargeBody .dmRespRow{width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:40px;padding-right:40px}.dm-bfs.dm-layout-home div.dmInner{background-color:#fff}.dmStandardDesktop .dmHeader{background-color:#68ccd1;max-width:100%}.standardHeaderLayout .dmHeader{display:block;height:auto}#dm div.dmRespCol>*{line-height:normal}#dm div.dmInner,#dm div.dmInner .dmRespCol{font-family:Roboto,"Roboto Fallback";color:#444;font-size:15px}.dmLargeBody .dmBody .dmRespRowsWrapper{background-color:transparent}#dm div.dmInner,#dm div.dmInner .dmRespCol,.dmPhotoGallery .caption-text.caption-text{font-family:Poppins,"Poppins Fallback";color:var(--color_4);font-weight:400}#dm div.dmContent h1,#dm div.dmContent h2,#dm div.dmContent h3{font-family:Cabin,"Cabin Fallback";direction:ltr;font-style:normal}.newPhotoGallery .photoGalleryViewAll.link{color:var(--color_8)}#dm div.dmContent h1{color:#000;font-weight:700;text-decoration:none;font-size:55px}#dm div.dmContent .dmNewParagraph[data-version] h1{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h1 *,#dm div.dmContent h2{text-decoration:none}#dm div.dmContent h2{color:#000;font-weight:400}#dm div.dmContent .dmNewParagraph[data-version] h2{text-decoration:inherit}#dm div.dmContent .dmNewParagraph[data-version] h2 *{text-decoration:none}#dm div.dmContent h3{color:#000;font-weight:700;text-decoration:none}#dm div.dmNewParagraph p{color:var(--color_4);direction:ltr;font-family:Poppins,"Poppins Fallback";font-weight:400;font-style:normal;text-decoration:none;line-height:1.5}#dm DIV.dmOuter DIV.dmInner{background-color:rgba(242,247,250,1);background-image:url(https://lirp.cdn-website.com/30bf6a54/dms3rep/multi/opt/back-gral-4447h.jpg);background-size:contain;background-repeat:no-repeat;background-attachment:fixed}#dm div.dmInner,#dm div.dmInner .dmRespCol,.dmPhotoGallery .caption-text.caption-text{font-size:16px}#dm div.dmContent h2{font-size:25px}#dm div.dmContent h3{font-size:18px}@media (min-width:0px) and (max-width:767px){:root{--btn-text-font-size:15px}}#dm .dmWidget:not([data-buttonstyle]){overflow:initial;background-clip:border-box;border-radius:1px}#dm .dmWidget:not([data-buttonstyle]) .text{padding:16px 0}#dm .dmWidget:not([data-buttonstyle]) .iconBg{display:none}#dm div.dmInner #site_content .dmWidget,#dm div.dmInner .dmHeader .dmWidget{background-color:var(--btn-bg-color);background-image:var(--btn-bg-image);border-color:var(--btn-border-color);border-bottom-color:var(--btn-border-b-color);border-left-color:var(--btn-border-l-color);border-right-color:var(--btn-border-r-color);border-top-color:var(--btn-border-t-color);border-radius:var(--btn-border-radius);border-bottom-left-radius:var(--btn-border-bl-radius);border-bottom-right-radius:var(--btn-border-br-radius);border-top-left-radius:var(--btn-border-tl-radius);border-top-right-radius:var(--btn-border-tr-radius);border-width:var(--btn-border-width);border-bottom-width:var(--btn-border-b-width);border-left-width:var(--btn-border-l-width);border-right-width:var(--btn-border-r-width);border-top-width:var(--btn-border-t-width);direction:var(--btn-text-direction);text-align:var(--btn-text-align)}#dm div.dmInner #site_content .dmWidget span.text{color:var(--btn-text-color);font-size:var(--btn-text-font-size);font-weight:var(--btn-text-font-weight);text-decoration:var(--btn-text-decoration)}#dm div.dmInner #site_content .dmWidget span.icon{color:var(--btn-icon-color);fill:var(--btn-icon-fill)}#dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg{display:var(--btn-icon-wrpr-display)}.responsiveTablet .stickyHeaderSpacer{height:101.5px!important}#dm .p_hfcontainer div.u_1710244023 img{border-radius:0!important;-moz-border-radius:0!important;-webkit-border-radius:0!important}#dm .p_hfcontainer nav.u_1320789376{color:#fff!important}#dm .p_hfcontainer nav.u_1320789376.main-navigation.unifiednav{background-color:rgba(0,0,0,0)!important}#dm .p_hfcontainer .u_1833219150 .phoneConteiner a{justify-content:flex-start!important;text-align:left!important}#dm .p_hfcontainer .u_1953355434 .floating-engage svg{fill:var(--color_5)!important}#dm .p_hfcontainer .u_1953355434 .contactos-btn .btnm{color:var(--color_5)!important}#dm .dmInner div.dmHeader,#dm .dmInner div.dmHeader.u_hcontainer,#dm .dmInner div.u_hcontainer{background-color:var(--color_5)!important;border-style:solid!important;border-width:0!important}#dm .p_hfcontainer div.u_1953355434 .buttonCaption,#dm .p_hfcontainer div.u_1953355434 .interactPluginX .floating-engage{background-color:rgba(246,10,10,1)!important}#dm .p_hfcontainer div.u_1833219150 .phoneConteiner a{color:var(--color_4)!important;font-weight:700!important}#dm .p_hfcontainer .u_1833219150 .icono-phone svg{fill:var(--color_2)!important}div.u_1210262481 .texto-method{color:var(--color_8)!important}#dm .dmBody div.u_1234678453 .photoGalleryViewAll.link,#dm .p_hfcontainer div.u_1210262481 .texto-method,#dm .p_hfcontainer div.u_1953355434 .buttonCaption{color:var(--color_5)!important}#dm .p_hfcontainer .u_1210262481 .Icolor *{fill:var(--color_5)!important}#dm .p_hfcontainer div.u_1756147004 .btnDisenotres span.text{font-weight:400!important}#dm .dmInner div.u_hcontainer{float:none!important;top:0!important;left:0!important;width:100%!important;position:relative!important;height:auto!important;max-width:100%!important;min-width:0!important;text-align:center!important;padding:15px 0 100px!important;margin:0 auto!important}#dm .dmInner div.dmHeader.u_hcontainer{padding-top:15px!important;padding-bottom:19px!important}.stickyHeaderSpacer{height:126px!important}@media (min-width:1025px){:root{--btn-text-font-size:15px}.responsiveTablet .stickyHeaderSpacer{height:117.03px!important}}@media (min-width:768px) and (max-width:1024px){:root{--btn-text-font-size:15px}.responsiveTablet .stickyHeaderSpacer{height:117.03px!important}}#dm .p_hfcontainer div.u_1028138417,#dm .p_hfcontainer div.u_1710244023,#dm .p_hfcontainer nav.u_1320789376{height:auto!important;text-align:center!important;float:none!important;top:0!important}#dm .dmInner div.fHeader .dmHeader[freeheader=true]{padding:15px 0!important}.fHeader #hcontainer.dmHeader[freeheader=true]{padding-top:initial!important;padding-bottom:initial!important}#dm .p_hfcontainer div.u_1938812099{padding-left:0!important}#dm .p_hfcontainer div.u_1181143731{padding:0!important}#dm .p_hfcontainer div.u_1945017087{padding-left:10px!important}#dm .p_hfcontainer div.u_1710244023{left:0!important;width:162px!important;position:relative!important;max-width:calc(100% - 72px)!important;min-width:25px!important;display:block!important;padding:0!important;margin:0 72.67px 0 72.66px!important}#dm .dmInner div.fHeader.dmHeaderContainer #hcontainer.dmHeader[freeheader=true]{margin:0!important;padding:0!important}#dm .p_hfcontainer nav.u_1320789376{left:0!important;width:100%!important;position:relative!important;max-width:calc(100% - 0px)!important;justify-content:center!important;align-items:stretch!important;min-width:25px!important;padding:15px!important;margin:8px 0 0!important}#dm .p_hfcontainer div.u_1833219150{margin:15px 0 0!important;padding:0!important}#dm .p_hfcontainer div.u_1028138417{left:0!important;width:auto!important;position:relative!important;max-width:100%!important;min-width:0!important;padding:24.5px 15px!important;margin:0!important}#dm .p_hfcontainer .u_1210262481 .method{height:30px!important}#dm .p_hfcontainer div.u_1756147004{display:block!important;float:none!important;top:0!important;left:0!important;width:calc(100% - 79px)!important;position:relative!important;height:48px!important;max-width:318px!important;min-width:25px!important;text-align:left!important;padding:0!important;margin:10px auto 0!important}#dm .dmBody div.dmform-error{font-style:normal!important}#dm .dmBody .u_1176080617{width:100%!important}#dm .dmBody div.u_1581304071 input:not([type=submit]){background-color:rgba(225,221,212,1)!important;border-style:solid!important;border-width:0!important}#dm .d-page-1716942098 DIV.dmInner{background-repeat:no-repeat!important;background-size:cover!important;background-attachment:fixed!important;background-position:50% 50%!important}#dm .dmBody .u_1234678453 .photoGalleryThumbs{padding:5px!important}#dm .dmBody .u_1234678453 .photoGalleryViewAll{padding:0 10px!important}#dm .dmBody div.dmform-error,#dm .dmBody div.u_1581304071 .dmform-success{font-size:18px!important}@media all{#a9b68e1a,#b7a85cbc{display:flex;column-gap:4%;row-gap:24px}#a9b68e1a,#b7a85cbc,#bc83d10f{background-size:cover;background-position:50% 50%;background-repeat:no-repeat}#b7a85cbc,#widget_2s0,#widget_t6u{position:relative;width:100%;max-width:100%}:root{--btn-text-direction:ltr;--btn-border-r-color:var(--btn-border-color);--btn-border-l-color:var(--btn-border-color);--btn-border-b-width:var(--btn-border-width);--btn-border-width:2px;--btn-border-radius:0px;--btn-border-t-width:var(--btn-border-width);--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:rgba(0, 0, 0, 0);--btn-border-color:rgb(0, 0, 0);--btn-border-tr-radius:var(--btn-border-radius);--btn-border-r-width:var(--btn-border-width);--btn-bg-image:none;--btn-border-b-color:var(--btn-border-color);--btn-border-l-width:var(--btn-border-width);--btn-border-t-color:var(--btn-border-color);--btn-text-align:center;--btn-text-color:rgb(0, 0, 0);--btn-text-decoration:none;--btn-text-font-weight:700;--btn-icon-color:rgb(247, 247, 247);--btn-icon-fill:rgb(247, 247, 247);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:rgb(0, 0, 0);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:rgba(0, 0, 0, 0);--btn-hover-text-color:rgb(255, 255, 255);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}#b7a85cbc{align-self:stretch;min-height:8px;flex-direction:column;justify-content:center;align-items:flex-start;min-width:4%;padding:16px}#bc83d10f{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(8px,max-content);display:grid;justify-content:start;align-items:start;position:relative}#a9b68e1a{align-self:start;padding-top:4%;padding-bottom:4%;min-height:460px;flex-direction:row;max-width:1200px;width:100%;justify-content:flex-start;align-items:center;position:relative;justify-self:center;order:0;flex-wrap:nowrap}#widget_2s0,#widget_t6u{height:auto;min-width:10px;min-height:10px}}@media (min-width:768px) and (max-width:1024px){#a9b68e1a{padding-left:2%;padding-right:2%;flex-direction:row;flex-wrap:nowrap;min-height:460px}#b7a85cbc{width:100%;min-height:8px}}@media (min-width:1400px){#a9b68e1a{flex-direction:row;flex-wrap:nowrap;min-height:460px}#b7a85cbc{width:100%;min-height:8px}}@media (max-width:767px){#b7a85cbc{width:100%;min-height:160px;align-items:center}#a9b68e1a{min-height:0;flex-direction:column;padding-left:4%;padding-right:4%;flex-wrap:nowrap}}@media (min-width:468px) and (max-width:767px){#a9b68e1a{flex-direction:column;flex-wrap:nowrap;min-height:0}#b7a85cbc{width:100%;min-height:160px}}@media all{#ad84900a,#b39475f0{column-gap:4%;row-gap:24px;width:100%}#ad84900a,#b39475f0,#group_h7r{background-size:cover;background-repeat:no-repeat;background-position:50% 50%;display:flex}#widget_3i3,#widget_899,#widget_jcb{min-width:10px;min-height:10px}#ad84900a,#group_h7r,#widget_3i3,#widget_899,#widget_jcb{position:relative;max-width:100%}#ad84900a{align-self:stretch;padding-left:16px;min-height:8px;flex-direction:column;justify-content:center;align-items:flex-start;min-width:4%;padding-right:16px}#\32 dcfda6d{background-repeat:no-repeat;background-size:cover;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(8px,max-content);display:grid;justify-content:start;background-position:50% 50%;align-items:start;position:relative}#b39475f0{align-self:start;min-height:460px;flex-direction:row;max-width:1200px;justify-content:flex-start;align-items:center;position:relative;justify-self:center;order:0;flex-wrap:nowrap}#group_h7r{flex-direction:column;justify-content:flex-start;align-items:center;width:70%;min-height:777px;max-height:100%;align-self:center;background-color:var(--color_5)}#widget_jcb{width:100%;height:320px}#widget_899{width:50%;height:auto;margin-top:80px}#widget_3i3{width:75.4%;height:auto;margin-top:20px;margin-bottom:100px}}@media (min-width:768px) and (max-width:1024px){#b39475f0{padding-left:2%;padding-right:2%;flex-direction:row;flex-wrap:nowrap;min-height:460px}#ad84900a{width:100%;min-height:8px}#group_h7r{background-color:var(--color_5)}}@media (min-width:1400px){#b39475f0{flex-direction:row;flex-wrap:nowrap;min-height:460px}#ad84900a{width:100%;min-height:8px}#group_h7r{background-color:var(--color_5)}}@media (max-width:767px){#ad84900a{width:100%;min-height:160px;align-items:center}#b39475f0{min-height:0;flex-direction:column;padding-left:4%;padding-right:4%;flex-wrap:nowrap}#widget_jcb{height:240px;width:100%;order:0}#group_h7r{background-color:var(--color_5);width:100%}#widget_899{width:100%;order:1;margin-bottom:20px}#widget_3i3{width:95.69106481971028%;justify-self:auto;align-self:auto;order:2;margin:0;grid-area:auto/auto/auto/auto}}@media (min-width:468px) and (max-width:767px){#b39475f0{flex-direction:column;flex-wrap:nowrap;min-height:0}#ad84900a{width:100%;min-height:160px}#group_h7r{background-color:var(--color_5)}}@media all{#\30 61fa406,#\36 4157902{position:relative;min-width:10px;min-height:10px;max-width:100%;justify-self:auto}#\36 4157902{width:307px;height:auto;align-self:auto;order:6;margin:0;grid-area:auto/auto/auto/auto}#\30 61fa406{width:960px;height:37px;align-self:auto;order:3;margin:0;grid-area:auto/auto/auto/auto}#\30 3ace501,#\37 20d93fd{justify-self:auto;position:relative;min-width:10px;min-height:10px;max-width:100%;align-self:auto;margin:0;grid-area:auto/auto/auto/auto}#\37 20d93fd{width:960px;height:105px;order:4}#\30 3ace501{width:170px;height:40px;order:5}#bc96d10d{position:relative;width:960px;height:33px;min-width:10px;min-height:10px;max-width:100%;justify-self:auto;align-self:auto;order:6;margin:0;grid-area:auto/auto/auto/auto}}@media (max-width:767px){#group_ela{background-color:var(--color_5);width:99.99483980120546%;justify-self:auto;align-self:auto;order:0;margin:0;grid-area:auto/auto/auto/auto}}.font-size-22,.size-22{font-size:22px!important}#\31 752614389,#\31 856562304,#a9b68e1a,#group_vfl{order:0;flex-direction:row}#\31 530101498,#\31 804462564,#\31 880171490,#\33 a97502d,#\33 d27fa78,#\38 b1f2291,#ad84900a,#b199a30e,#b39475f0,#b7a85cbc,#dcdc4a83,#group_cqg,#group_ela,#group_h7r,#group_ofo,#group_u0g{order:0}#\33 a97502d,#\33 d27fa78,#b39475f0,#group_ofo{flex-direction:row}#widget_qnl{order:2}#widget_keq{order:1}#\30 61fa406{order:3}#\37 20d93fd{order:4}#\36 4157902,#bc96d10d{order:6}#\30 3ace501{order:5}#widget_46t{order:7} #dm .dmPhotoGallery.newPhotoGallery .dmPhotoGalleryHolder {display: none;} @media (max-width:767px){ [data-hidden-on-mobile] {display:none!important}}
+    .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop='none']) {
+      visibility: hidden;
+    }
+
+    
+</style>
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Roboto Fallback";
+  src: local('Arial');
+  ascent-override: 92.6709%;
+  descent-override: 24.3871%;
+  size-adjust: 100.1106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Montserrat Fallback";
+  src: local('Arial');
+  ascent-override: 84.9466%;
+  descent-override: 22.0264%;
+  size-adjust: 113.954%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Poppins Fallback";
+  src: local('Arial');
+  ascent-override: 92.326%;
+  descent-override: 30.7753%;
+  line-gap-override: 8.793%;
+  size-adjust: 113.7274%;
+}@font-face {
+  font-family: "Cabin Fallback";
+  src: local('Arial');
+  ascent-override: 101.7818%;
+  descent-override: 26.3684%;
+  size-adjust: 94.8106%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Oswald Fallback";
+  src: local('Arial');
+  ascent-override: 145.0682%;
+  descent-override: 35.1423%;
+  size-adjust: 82.2372%;
+  line-gap-override: 0%;
+ }@font-face {
+  font-family: "Playball Fallback";
+  src: local('Arial');
+  ascent-override: 112.7247%;
+  descent-override: 35.5973%;
+  size-adjust: 84.2761%;
+  line-gap-override: 0%;
+ }
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.centraldeplomeros.com/">
+<script type="application/ld+json">
+    {
+        "@context" : "https://schema.org",
+        "@type" : "WebSite",
+        "name" : "CENTRAL DE PLOMEROS",
+        "url" : "https://www.centraldeplomeros.com/"
+    }
+</script>
+  <title>
+    Servicios de plomería en Cancún, Quintana Roo – Central de Plomeros
+  </title>
+  <meta name="description" content="Central de Plomeros brinda servicios de plomería en Cancún, Quintana Roo, ¡llámanos!
+
+"/>
+
+  <meta name="google-site-verification" content="N7koxprMd2IO0JHwM8LNdK5r8R1K0DfJpLcq51Yn1Bw"/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Servicios de plomería en Cancún, Quintana Roo – Central de Plomeros"/>
+  <meta name="twitter:description" content="Central de Plomeros brinda servicios de plomería en Cancún, Quintana Roo, ¡llámanos!
+
+"/>
+  <meta property="og:description" content="Central de Plomeros brinda servicios de plomería en Cancún, Quintana Roo, ¡llámanos!
+
+"/>
+  <meta property="og:title" content="Servicios de plomería en Cancún, Quintana Roo – Central de Plomeros"/>
+<script type="application/ld+json">
+{
+  "@context" : {
+    "@vocab" : "http://schema.org/"
+  },
+  "@type" : "LocalBusiness",
+  "name" : "CENTRAL DE PLOMEROS",
+  "address" : {
+    "@type" : "PostalAddress",
+    "streetAddress" : "64 MZ 10 LOTE 7  SUPERMANZANA 230",
+    "addressLocality" : "CANCUN",
+    "addressRegion" : "QUINTANA ROO",
+    "postalCode" : "77516",
+    "addressCountry" : "MX"
+  },
+  "geo" : {
+    "@type" : "GeoCoordinates",
+    "latitude" : "0.000000",
+    "longitude" : "0.000000"
+  },
+  "url" : "https://www.centraldeplomeros.com",
+  "telephone" : "998-874-2424",
+  "email" : "centraldeplomeros@outlook.com",
+  "logo" : "https://irp.cdn-website.com/30bf6a54/dms3rep/multi/921.jpg",
+  "image" : [ "https://irp.cdn-website.com/30bf6a54/dms3rep/multi/636.jpg", "https://irp.cdn-website.com/30bf6a54/dms3rep/multi/634.jpg", "https://irp.cdn-website.com/30bf6a54/dms3rep/multi/635.jpg" ],
+  "openingHoursSpecification" : [ {
+    "@type" : "OpeningHoursSpecification",
+    "dayOfWeek" : [ "Friday" ],
+    "opens" : "09:00",
+    "closes" : "18:00"
+  }, {
+    "@type" : "OpeningHoursSpecification",
+    "dayOfWeek" : [ "Monday" ],
+    "opens" : "09:00",
+    "closes" : "18:00"
+  }, {
+    "@type" : "OpeningHoursSpecification",
+    "dayOfWeek" : [ "Saturday" ],
+    "opens" : "10:00",
+    "closes" : "15:00"
+  }, {
+    "@type" : "OpeningHoursSpecification",
+    "dayOfWeek" : [ "Thursday" ],
+    "opens" : "09:00",
+    "closes" : "18:00"
+  }, {
+    "@type" : "OpeningHoursSpecification",
+    "dayOfWeek" : [ "Tuesday" ],
+    "opens" : "09:00",
+    "closes" : "18:00"
+  }, {
+    "@type" : "OpeningHoursSpecification",
+    "dayOfWeek" : [ "Wednesday" ],
+    "opens" : "09:00",
+    "closes" : "18:00"
+  } ],
+  "@id" : "https://www.centraldeplomeros.com"
+}
+</script>
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="home"  class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody responsiveTablet "
+      style="padding:0;margin:0;"
+      
+    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class='dmwr'>
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1901957768" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-home dm-single-page-nav  hasAnimations hasStickyHeader dmPageBody d-page-1716942098 dmFreeHeader" id="dm-outer-wrapper" data-page-class="1716942098" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true" headerlayout="b58ba5b5703b4cd7b5f5f7951565dc87===horizontal-layout-11" layout="7f3c1de367df47d5b45ab63d33101c7b===header"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1709005236"> <div class="u_1028138417 dmRespRow dmDefaultListContentRow fullBleedChanged fullBleedMode" style="text-align:center" id="1028138417"> <div class="dmRespColsWrapper" id="1856562304"> <div class="u_1181143731 small-12 dmRespCol medium-4 large-4" id="1181143731"> <div class="u_1710244023 imageWidget align-center" data-widget-type="image" id="1710244023" data-element-type="image" data-binding="W3siYmluZGluZ05hbWUiOiJpbWFnZSIsInZhbHVlIjoic2l0ZV9pbWFnZXMubG9nbyJ9XQ=="> <a href="index.html" id="1849790012"><img src="https://lirp.cdn-website.com/30bf6a54/dms3rep/multi/opt/921-194w.jpg" id="1669842178" class="" data-dm-image-path="https://irp.cdn-website.com/30bf6a54/dms3rep/multi/921.jpg" data-diy-image="" alt="" onerror="handleImageLoadError(this)" height="68.03125" width="162.0"/></a> 
+</div> 
+</div> 
+ <div class="u_1945017087 dmRespCol small-12 medium-4 large-4" id="1945017087"> <nav class="u_1320789376 effect-text-color main-navigation unifiednav dmLinksMenu  unifiednav_empty" role="navigation" layout-main="horizontal_nav_layout_2" layout-sub="submenu_horizontal_2" data-show-vertical-sub-items="HOVER" id="1320789376" dmle_extension="onelinksmenu" data-element-type="onelinksmenu" wr="true" icon="true" surround="true" adwords="" navigation-id="unifiedNav"> <ul role="menubar" class="unifiednav__container  " data-auto="navigation-pages"></ul> 
+</nav> 
+ <div class="u_1756147004 widget-2b6e49 dmCustomWidget" data-lazy-load="true" data-title="" id="1756147004" dmle_extension="custom_extension" data-element-type="custom_extension" data-binding="W3siYmluZGluZ05hbWUiOiJQaG9uZVdoYXRzYXBwIiwidmFsdWUiOiJjb250ZW50X2xpYnJhcnkuZ2xvYmFsLnBob25lLndoYXRzYXBwLW51bWVybyJ9XQ==" icon="false" surround="false" data-widget-id="2b6e491ddb1a42ec9d783bc8f175b4f3" data-widget-version="80" data-widget-config="eyJXaGF0c2FwcHR4dCI6IkVudsOtYW5vcyB1biBtZW5zYWplIGRlIFdoYXRzQXBwICIsIlBob25lV2hhdHNhcHAiOiI1MjE5OTg4NzQyNDI0IiwibWVuc2FqZVdoYXRzYXBwIjoiwqFIb2xhISBWaSB0dSBzaXRpbyBBRE4sIMK/bWUgcG9kcsOtYXMgYnJpbmRhciBtw6FzIGluZm9ybWFjacOzbiBzb2JyZSB0dXMgc2VydmljaW9zPyIsIm13aGF0c2FwcGRvcyI6IiIsInRpcG9EaXNlbm9XUCI6ImRXaGF0c2FwcDMifQ=="> <div class="contenedorGralWP"> <a href="https://wa.me/5219988742424?text=¡Hola! Vi tu sitio ADN, ¿me podrías brindar más información sobre tus servicios? " target="_blank"><!--Diseño tres--> <div class="btnDisenotres dmWidget"> <div class="iconoDisenotres"> <svg xmlns="http://www.w3.org/2000/svg" title="WhatsApp" class="tamanoIconoW2" id="Layer_2" viewbox="0 0 75.51 75.1"> <g id="Layer_1-2"> <g> <path d="M37.96,0C17.22,0,.4,16.81,.4,37.55c0,6.64,1.73,12.87,4.75,18.28L0,75.08l19.02-5.1c5.56,3.25,12.02,5.13,18.93,5.13,20.74,0,37.55-16.81,37.55-37.55S58.69,0,37.96,0Z" style="fill:#ececec;"></path> 
+ <path d="M37.92,6.41c-17.2,0-31.15,13.94-31.15,31.15,0,5.51,2.53,12.46,5.04,16.95l-2.54,11.57,11.18-2.7c4.61,2.7,11.74,5.33,17.47,5.33,17.2,0,31.15-13.94,31.15-31.15S55.12,6.41,37.92,6.41Z" style="fill:#65be6c;"></path> 
+ <path d="M20.33,27.71c-.1-2.72,1.56-5.29,4.08-7.37,.48-.4,1.24-.57,1.89-.63,.82-.08,1.67,0,2.48,.14,.36,.07,.81,.41,.97,.74,1.27,2.73,2.47,5.48,3.7,8.22,.31,.68,.04,1.24-.39,1.75-.85,.98-1.7,1.96-2.59,2.9-.54,.57-.58,1.12-.21,1.79,3,5.39,7.54,8.97,13.21,11.21,.64,.25,1.08,.03,1.46-.46,.93-1.2,1.86-2.4,2.8-3.59,.69-.87,1.09-.98,2.09-.52,2.51,1.15,5.02,2.31,7.53,3.47,.9,.42,1.1,.83,.94,1.81-.39,2.46-1.16,4.72-3.31,6.23-2.61,1.82-5.48,2.27-8.53,1.49-5.47-1.39-10.35-3.95-14.64-7.62-3.68-3.14-6.83-6.74-9.2-10.97-1.37-2.44-2.26-5.03-2.27-8.59Z" style="fill:#fcfcfb;"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <span class="text">Env&iacute;anos un mensaje de WhatsApp</span> 
+</div> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1938812099 dmRespCol small-12 medium-4 large-4" id="1938812099"> <div class="widget-66dae1 u_1833219150 dmCustomWidget" data-lazy-load="true" data-title="" id="1833219150" dmle_extension="custom_extension" data-element-type="custom_extension" data-binding="W3siYmluZGluZ05hbWUiOiJwaG9uZSIsInZhbHVlIjoiY29udGVudF9saWJyYXJ5Lmdsb2JhbC5waG9uZS5waG9uZSJ9XQ==" icon="false" surround="false" data-widget-id="66dae1a547a54519bca9bd0a2d88885c" data-widget-version="32" data-widget-config="eyJwaG9uZSI6Ijk5OC04NzQtMjQyNCIsInByZWZpam9QaG9uZSI6IiAiLCJldGlxdWV0YU1hbnVhbCI6bnVsbCwiaWNvbm8iOnRydWUsImljb25vUGhvbmUiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiB2aWV3Qm94PVwiMCAwIDcwIDcwXCI+IDxnPiA8cGF0aCBkPVwiTTI1LjMsNDQuOEMzNS43LDU1LjMsNDQuMiw1Niw0Ni42LDU2YzMuOSwwLDkuNC01LDkuNC02LjN2LTIuNWMwLTAuNi0wLjQtMS4xLTEtMS4zbC0xMC0zLjJjLTAuNS0wLjItMSwwLTEuNCwwLjNMNDAsNDYuOFxyXG5cdFx0Yy0wLjQsMC40LTEuMSwwLjUtMS42LDAuMmMtMS41LTAuOS00LjgtMi45LTguNi02LjhjLTMuOC0zLjgtNS45LTcuMS02LjgtOC42Yy0wLjMtMC41LTAuMi0xLjIsMC4yLTEuNmwzLjctMy43XHJcblx0XHRjMC40LTAuNCwwLjUtMC45LDAuMy0xLjRsLTMuMi0xMGMtMC4yLTAuNi0wLjctMS0xLjMtMWgtMi41QzE5LDE0LjEsMTQsMTkuNywxNCwyMy41QzE0LDI1LjgsMTQuOCwzNC4zLDI1LjMsNDQuOEwyNS4zLDQ0Ljh6XCI+PC9wYXRoPiA8L2c+IDwvc3ZnPiIsInBob25lMiI6IiIsInByZWZpam9QaG9uZTIiOiIgIiwiZXRpcXVldGFNYW51YWwyIjpudWxsLCJpY29ubzIiOnRydWUsImljb25vUGhvbmUyIjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgdmlld0JveD1cIjAgMCA3MCA3MFwiPiA8Zz4gPHBhdGggZD1cIk0yNS4zLDQ0LjhDMzUuNyw1NS4zLDQ0LjIsNTYsNDYuNiw1NmMzLjksMCw5LjQtNSw5LjQtNi4zdi0yLjVjMC0wLjYtMC40LTEuMS0xLTEuM2wtMTAtMy4yYy0wLjUtMC4yLTEsMC0xLjQsMC4zTDQwLDQ2LjhcclxuXHRcdGMtMC40LDAuNC0xLjEsMC41LTEuNiwwLjJjLTEuNS0wLjktNC44LTIuOS04LjYtNi44Yy0zLjgtMy44LTUuOS03LjEtNi44LTguNmMtMC4zLTAuNS0wLjItMS4yLDAuMi0xLjZsMy43LTMuN1xyXG5cdFx0YzAuNC0wLjQsMC41LTAuOSwwLjMtMS40bC0zLjItMTBjLTAuMi0wLjYtMC43LTEtMS4zLTFoLTIuNUMxOSwxNC4xLDE0LDE5LjcsMTQsMjMuNUMxNCwyNS44LDE0LjgsMzQuMywyNS4zLDQ0LjhMMjUuMyw0NC44elwiPjwvcGF0aD4gPC9nPiA8L3N2Zz4iLCJwaG9uZTMiOiIiLCJwcmVmaWpvUGhvbmUzIjpudWxsLCJldGlxdWV0YU1hbnVhbDMiOm51bGwsImljb25vMyI6dHJ1ZSwiaWNvbm9QaG9uZTMiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiB2aWV3Qm94PVwiMCAwIDcwIDcwXCI+IDxnPiA8cGF0aCBkPVwiTTI1LjMsNDQuOEMzNS43LDU1LjMsNDQuMiw1Niw0Ni42LDU2YzMuOSwwLDkuNC01LDkuNC02LjN2LTIuNWMwLTAuNi0wLjQtMS4xLTEtMS4zbC0xMC0zLjJjLTAuNS0wLjItMSwwLTEuNCwwLjNMNDAsNDYuOFxyXG5cdFx0Yy0wLjQsMC40LTEuMSwwLjUtMS42LDAuMmMtMS41LTAuOS00LjgtMi45LTguNi02LjhjLTMuOC0zLjgtNS45LTcuMS02LjgtOC42Yy0wLjMtMC41LTAuMi0xLjIsMC4yLTEuNmwzLjctMy43XHJcblx0XHRjMC40LTAuNCwwLjUtMC45LDAuMy0xLjRsLTMuMi0xMGMtMC4yLTAuNi0wLjctMS0xLjMtMWgtMi41QzE5LDE0LjEsMTQsMTkuNywxNCwyMy41QzE0LDI1LjgsMTQuOCwzNC4zLDI1LjMsNDQuOEwyNS4zLDQ0Ljh6XCI+PC9wYXRoPiA8L2c+IDwvc3ZnPiIsInBob25lNCI6IiIsInByZWZpam9QaG9uZTQiOm51bGwsImV0aXF1ZXRhTWFudWFsNCI6bnVsbCwiaWNvbm80Ijp0cnVlLCJpY29ub1Bob25lNCI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIHZpZXdCb3g9XCIwIDAgNzAgNzBcIj4gPGc+IDxwYXRoIGQ9XCJNMjUuMyw0NC44QzM1LjcsNTUuMyw0NC4yLDU2LDQ2LjYsNTZjMy45LDAsOS40LTUsOS40LTYuM3YtMi41YzAtMC42LTAuNC0xLjEtMS0xLjNsLTEwLTMuMmMtMC41LTAuMi0xLDAtMS40LDAuM0w0MCw0Ni44XHJcblx0XHRjLTAuNCwwLjQtMS4xLDAuNS0xLjYsMC4yYy0xLjUtMC45LTQuOC0yLjktOC42LTYuOGMtMy44LTMuOC01LjktNy4xLTYuOC04LjZjLTAuMy0wLjUtMC4yLTEuMiwwLjItMS42bDMuNy0zLjdcclxuXHRcdGMwLjQtMC40LDAuNS0wLjksMC4zLTEuNGwtMy4yLTEwYy0wLjItMC42LTAuNy0xLTEuMy0xaC0yLjVDMTksMTQuMSwxNCwxOS43LDE0LDIzLjVDMTQsMjUuOCwxNC44LDM0LjMsMjUuMyw0NC44TDI1LjMsNDQuOHpcIj48L3BhdGg+IDwvZz4gPC9zdmc+IiwicGhvbmU1IjoiIiwicHJlZmlqb1Bob25lNSI6bnVsbCwiZXRpcXVldGFNYW51YWw1IjpudWxsLCJpY29ubzUiOnRydWUsImljb25vUGhvbmU1IjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgdmlld0JveD1cIjAgMCA3MCA3MFwiPiA8Zz4gPHBhdGggZD1cIk0yNS4zLDQ0LjhDMzUuNyw1NS4zLDQ0LjIsNTYsNDYuNiw1NmMzLjksMCw5LjQtNSw5LjQtNi4zdi0yLjVjMC0wLjYtMC40LTEuMS0xLTEuM2wtMTAtMy4yYy0wLjUtMC4yLTEsMC0xLjQsMC4zTDQwLDQ2LjhcclxuXHRcdGMtMC40LDAuNC0xLjEsMC41LTEuNiwwLjJjLTEuNS0wLjktNC44LTIuOS04LjYtNi44Yy0zLjgtMy44LTUuOS03LjEtNi44LTguNmMtMC4zLTAuNS0wLjItMS4yLDAuMi0xLjZsMy43LTMuN1xyXG5cdFx0YzAuNC0wLjQsMC41LTAuOSwwLjMtMS40bC0zLjItMTBjLTAuMi0wLjYtMC43LTEtMS4zLTFoLTIuNUMxOSwxNC4xLDE0LDE5LjcsMTQsMjMuNUMxNCwyNS44LDE0LjgsMzQuMywyNS4zLDQ0LjhMMjUuMyw0NC44elwiPjwvcGF0aD4gPC9nPiA8L3N2Zz4ifQ=="> <div class="generalPhones" style="flex-direction:column; justify-content:;"><!-- Visualización del teléfono 1--> <div class="phoneConteiner non"> <a href="tel:998-874-2424" class="phone-adsa"> <div class="icono-phone"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 70 70"> <g> <path d="M25.3,44.8C35.7,55.3,44.2,56,46.6,56c3.9,0,9.4-5,9.4-6.3v-2.5c0-0.6-0.4-1.1-1-1.3l-10-3.2c-0.5-0.2-1,0-1.4,0.3L40,46.8
+		c-0.4,0.4-1.1,0.5-1.6,0.2c-1.5-0.9-4.8-2.9-8.6-6.8c-3.8-3.8-5.9-7.1-6.8-8.6c-0.3-0.5-0.2-1.2,0.2-1.6l3.7-3.7
+		c0.4-0.4,0.5-0.9,0.3-1.4l-3.2-10c-0.2-0.6-0.7-1-1.3-1h-2.5C19,14.1,14,19.7,14,23.5C14,25.8,14.8,34.3,25.3,44.8L25.3,44.8z"></path> 
+</g> 
+</svg> 
+</div> 
+ <label></label> 
+ <label></label> 
+ <label>&nbsp;998-874-2424</label> 
+</a> 
+</div> 
+<!-- Visualización del teléfono 2--><!-- Visualización del teléfono 3--><!-- Visualización del teléfono 4--><!-- Visualización del teléfono 5--></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="stickyHeaderSpacer" id="stickyHeaderSpacer" data-new="true"></div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr/></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"></div> 
+ <div class="titleLine display_None"><hr/></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_home dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1716942098"> <div data-layout-section="" data-auto="flex-section" id="1235289495" data-flex-id="db63a06d"> <div class="flex-widgets-container" id="1532923037"></div> 
+ <section id="332f8368" class="flex-element section" data-auto="flex-element-section"> <div id="bc83d10f" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="a9b68e1a" class="flex-element group" data-auto="flex-element-group"> <div id="b7a85cbc" class="flex-element group" data-auto="flex-element-group"> <div id="widget_t6u" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1065781736"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1065781736" style=""> <h1 style="line-height: 55.2px;" class="text-align-center"><span style="display: unset; font-weight: normal; color: var(--color_5);">Central de Plomeros te ofrece servicios de plomer&iacute;a en Canc&uacute;n, &iexcl;ll&aacute;manos!</span></h1> 
+<p class="text-align-left m-text-align-center"><br/></p></div> 
+</div> 
+ <div id="widget_2s0" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1200485337"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1200485337" style=""><p class="m-text-align-center text-align-center size-22 m-size-18"><span style="display: unset; font-style: italic; color: var(--color_2);" class="font-size-22 m-font-size-18">Servicios garantizados</span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-layout-section="" data-auto="flex-section" id="1144167544" data-flex-id="cb7e1f1c"> <div class="flex-widgets-container" id="1685363604"></div> 
+ <section id="a622c581" class="flex-element section" data-auto="flex-element-section"> <div id="2dcfda6d" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="b39475f0" class="flex-element group" data-auto="flex-element-group"> <div id="ad84900a" class="flex-element group" data-auto="flex-element-group"> <div id="group_h7r" class="flex-element group" data-auto="flex-element-group"> <div id="widget_jcb" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="image" data-external-id="1176080617"> <div class="imageWidget align-center u_1176080617" data-element-type="image" data-widget-type="image" id="1176080617"><img src="https://lirp.cdn-website.com/30bf6a54/dms3rep/multi/opt/back-981w.jpg" alt="" id="1954089916" class="" data-dm-image-path="https://irp.cdn-website.com/30bf6a54/dms3rep/multi/back.jpg" width="1000" height="357" onerror="handleImageLoadError(this)"/></div> 
+</div> 
+ <div id="widget_899" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1614680706"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1614680706" style=""> <h2 style="line-height: 37.4px;" class="text-align-center"><span style="display: unset; font-weight: bold; color: var(--color_1);">CENTRAL DE PLOMEROS, servicios de plomer&iacute;a profesionales</span><span style="display: initial;"><span class="ql-cursor">﻿</span></span></h2> 
+</div> 
+</div> 
+ <div id="widget_3i3" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1657968477"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1657968477" style=""><p class="m-text-align-left text-align-left"><span class="" style="display: initial;"><span style="display: initial;">En</span> 
+</span><span style="display: initial; font-weight: bold;">Central de Plomeros</span><span class="" style="display: initial;"> <span style="display: initial;">somos una empresa local dedicada a los</span> 
+</span><span style="display: initial; font-weight: bold;">servicios de plomer&iacute;a</span><span class="" style="display: initial;"> <span style="display: initial;">y mantenimiento residencial, contamos con m&aacute;s de 8 a&ntilde;os de experiencia trabajando en Canc&uacute;n, Quintana Roo.<br/><br/>Adem&aacute;s de nuestros</span> 
+</span><span style="display: initial; font-weight: bold;">servicios de plomer&iacute;a</span><span class="" style="display: initial;"><span style="display: initial;">, tambi&eacute;n hacemos trabajo de instalaciones de gas y calentadores, limpieza de cisternas y tinacos, reparaci&oacute;n e instalaci&oacute;n de hidroneum&aacute;ticos, as&iacute; como la instalaci&oacute;n y reparaci&oacute;n de los muebles de ba&ntilde;o.<br/><br/>Tenemos los mejores precios en</span> 
+</span><span style="display: initial; font-weight: bold;">servicios de plomer&iacute;a</span><span class="" style="display: initial;"> <span style="display: initial;">y de mantenimiento residencial, entregamos con puntualidad y el trabajo est&aacute; garantizado.<br/><br/>Servicios y materiales de calidad a precios justos. Realizamos cotizaciones sin compromiso y facturamos si es que lo necesitas.</span></span></p></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-layout-section="" data-auto="flex-section" id="1827396745" data-flex-id="830c19fa"> <div class="flex-widgets-container" id="1040633162"></div> 
+ <section id="6f00f392" class="flex-element section" data-auto="flex-element-section"> <div id="6a982dac" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="3a97502d" class="flex-element group" data-auto="flex-element-group"> <div id="b199a30e" class="flex-element group" data-auto="flex-element-group"> <div id="group_u0g" class="flex-element group" data-auto="flex-element-group"> <div id="group_ofo" class="flex-element group" data-auto="flex-element-group"> <div id="widget_nku" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1945596039"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1945596039" style=""> <h2 class="text-align-center size-34 m-size-27" style="line-height: 37.4px;"><span style="color: var(--color_1); display: unset; font-weight: bold;" class="font-size-34 m-font-size-27">Servicios de plomer&iacute;a y mantenimiento:</span></h2> 
+</div> 
+</div> 
+</div> 
+ <div id="group_vfl" class="flex-element group" data-auto="flex-element-group"> <div id="group_cqg" class="flex-element group" data-auto="flex-element-group"> <div id="widget_qdo" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1926259724"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1926259724" style=""> <ul class="defaultList bullet"><li style="color: var(--color_5);"><span style="display: initial; color: var(--color_5);">Reparaci&oacute;n e instalaci&oacute;n de bombas de agua</span></li><li style="color: var(--color_5);"><span style="display: initial; color: var(--color_5);">Reparaci&oacute;n e instalaci&oacute;n de calentadores</span></li><li style="color: var(--color_5);"><span style="display: initial; color: var(--color_5);">Reparaci&oacute;n instalaci&oacute;n de hidroneum&aacute;ticos</span></li><li style="color: var(--color_5);"><span style="display: initial; color: var(--color_5);">Mantenimiento de flux&oacute;metros<span class="ql-cursor">﻿</span></span></li></ul> 
+</div> 
+</div> 
+</div> 
+ <div id="dcdc4a83" class="flex-element group" data-auto="flex-element-group"> <div id="6c7c9bbb" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1726242146"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1726242146" style=""> <ul class="defaultList bullet"><li style="color: var(--color_5);"><span style="display: initial; color: var(--color_5);">Instalaci&oacute;n de muebles de ba&ntilde;o</span></li><li style="color: var(--color_5);"><span style="display: initial; color: var(--color_5);">Limpieza de tinacos y cisternas</span></li><li style="color: var(--color_5);"><span style="display: initial; color: var(--color_5);">Mantenimiento residencial</span></li><li style="color: var(--color_5);"><span style="display: initial; color: var(--color_5);">Fugas de gas</span></li><li style="color: var(--color_5);"><span style="display: initial; color: var(--color_5);">Instalaci&oacute;n de gas</span></li><li style="color: var(--color_5);"><span style="display: initial; color: var(--color_5);">Instalaci&oacute;n de l&aacute;mparas y ventiladores<span class="ql-cursor">﻿</span></span></li></ul> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="widget_5l2" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="photoGallery" data-external-id="1234678453"> <div class="dmPhotoGallery newPhotoGallery dmPhotoGalleryResp u_1234678453 photo-gallery-done text-layout-over captionAlignment-center_center photoGallery" galleryoptionsparams="{thumbnailsPerRow: 3, rowsToShow: 3, imageScaleMethod: true}" data-desktop-layout="square" data-desktop-columns="3" data-element-type="dPhotoGalleryId" data-desktop-text-layout="over" id="1234678453" data-placeholder="false" data-rows-to-show="1"> <div class="dmPhotoGalleryHolder clearfix gallery shadowEffectToChildren gallery4inArow" id="1362986591"></div> 
+ <div class="layout-container square"> <div class="photogallery-row " data-index=""> <div class="photogallery-column column-3" data-index="0"> <div index="0" class="photoGalleryThumbs animated " id="1066279094" data-index="0"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" data-dm-force-device="mobile" class="u_1723379574" data-image-url="https://irp.cdn-website.com/30bf6a54/dms3rep/multi/636.jpg" style="background-image: url('https://lirp.cdn-website.com/30bf6a54/dms3rep/multi/opt/636-640w.jpg');"><img data-src="https://lirp.cdn-website.com/30bf6a54/dms3rep/multi/opt/636-1920w.jpg" alt="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1168080571" class="caption-container u_1168080571" style="display:none"> <span class="caption-inner"> <a id="1326867847" class="caption-button dmWidget  clearfix u_1326867847" href="index.html" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="1"> <div index="1" class="photoGalleryThumbs animated " id="1375318104" data-index="1"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" data-dm-force-device="mobile" class="u_1934581437" data-image-url="https://irp.cdn-website.com/30bf6a54/dms3rep/multi/634.jpg" style="background-image: url('https://lirp.cdn-website.com/30bf6a54/dms3rep/multi/opt/634-640w.jpg');"><img data-src="https://lirp.cdn-website.com/30bf6a54/dms3rep/multi/opt/634-1920w.jpg" alt="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1853525811" class="caption-container u_1853525811" style="display:none"> <span class="caption-inner"> <a id="1597401229" class="caption-button dmWidget  clearfix u_1597401229" href="index.html" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="photogallery-column column-3" data-index="2"> <div index="2" class="photoGalleryThumbs animated " id="1585260968" data-index="2"> <div class="thumbnailInnerWrapper" style="opacity: 1;"> <div class="image-container revealed"> <a data-dm-multisize-attr="temp" data-dm-force-device="mobile" class="u_1360190365" data-image-url="https://irp.cdn-website.com/30bf6a54/dms3rep/multi/635.jpg" style="background-image: url('https://lirp.cdn-website.com/30bf6a54/dms3rep/multi/opt/635-640w.jpg');"><img data-src="https://lirp.cdn-website.com/30bf6a54/dms3rep/multi/opt/635-1920w.jpg" alt="" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+ <div id="1023647764" class="caption-container u_1023647764" style="display:none"> <span class="caption-inner"> <a id="1317463275" class="caption-button dmWidget  clearfix u_1317463275" href="index.html" style=""> <span class="iconBg"> <span class="icon hasFontIcon "></span> 
+</span> 
+ <span class="text">Button</span> 
+</a> 
+</span> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+ <div data-layout-section="" data-auto="flex-section" id="1564536014" data-flex-id="6c7421e5"> <div class="flex-widgets-container" id="1908384312"></div> 
+ <section id="b616b85c" class="flex-element section" data-auto="flex-element-section"> <div id="93ee28e0" class="flex-element grid" data-auto="flex-element-grid" data-layout-grid=""> <div id="3d27fa78" class="flex-element group" data-auto="flex-element-group"> <div id="8b1f2291" class="flex-element group" data-auto="flex-element-group"> <div id="group_ela" class="flex-element group" data-auto="flex-element-group"> <div id="widget_8ns" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1307677598"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1307677598" style=""> <h2 class="text-align-center" style="line-height: 37.4px;"><span style="font-weight: bold; display: unset; color: var(--color_1);">CONTACTO</span></h2> 
+</div> 
+</div> 
+ <div id="widget_qnl" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="paragraph" data-external-id="1656497476"> <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1656497476" style=""><p class="m-text-align-center text-align-center"><span style="display: unset;">&iexcl;Contacta a Central de Plomeros y pide servicios de plomer&iacute;a!</span></p></div> 
+</div> 
+ <div id="widget_keq" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="divider" data-external-id="1751327672"> <div class="dmDividerWrapper clearfix u_1751327672" data-element-type="dDividerId" data-layout="divider-style-1" data-widget-version="2" id="1751327672"><hr class="dmDivider" style="border-width:2px; border-top-style:solid; color:grey;" id="1074164710"/></div> 
+</div> 
+ <div id="061fa406" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="custom" data-external-id="1788701190"> <div class="widget-40c66a u_1788701190 dmCustomWidget" data-lazy-load="true" data-title="" id="1788701190" dmle_extension="custom_extension" data-element-type="custom_extension" data-binding="W3siYmluZGluZ05hbWUiOiJ3aWRnZXRhZGRyZXNzX3NlcnZpY2VBZGRyZXNzIiwidmFsdWUiOiJjb250ZW50X2xpYnJhcnkuZ2xvYmFsIn0seyJiaW5kaW5nTmFtZSI6IndpZGdldGFkZHJlc3Nfc2VydmljZUFyZWEiLCJ2YWx1ZSI6InNpdGVfdGV4dC5zZXJ2aWNlX2FyZWFfY2l0eSJ9LHsiYmluZGluZ05hbWUiOiJ3aWRnZXRhZGRyZXNzX3NlcnZpY2VTdGF0ZSIsInZhbHVlIjoic2l0ZV90ZXh0LnNlcnZpY2VfYXJlYV9zdGF0ZSJ9XQ==" icon="false" surround="false" data-widget-id="40c66a42282346528f5c8ed4ab86df81" data-widget-version="41" data-widget-config="eyJ3aWRnZXRhZGRyZXNzX3NlcnZpY2VBZGRyZXNzIjoiNjQgTVogMTAgTE9URSA3ICBTVVBFUk1BTlpBTkEgMjMwLCBDQU5DVU4sIFFVSU5UQU5BIFJPTyA3NzUxNiIsIndpZGdldGFkZHJlc3NfdGl0bGUiOiIiLCJ3aWRnZXRhZGRyZXNzX3NlcnZpY2VBcmVhIjoiUVVJTlRBTkEgUk9PLCBDQU5Dw5pOLCBDRU5UUk8iLCJjb2xvckJvcmRlciI6IiM5MzkzOTMiLCJ3aWRnZXRhZGRyZXNzX3NlcnZpY2VTdGF0ZSI6IlFSIn0="> <div class="select_padding background-text size"> <label style="display: none" id="address">64 MZ 10 LOTE 7  SUPERMANZANA 230, CANCUN, QUINTANA ROO 77516</label> 
+ <label style="display: none" id="state">QR</label> 
+ <label style="display: none" id="city">QUINTANA ROO, CANC&Uacute;N, CENTRO</label> 
+ <div class="style-text"> <label id="area"></label> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="720d93fd" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="custom" data-external-id="1047953119"> <div class="widget-66dae1 u_1047953119 dmCustomWidget" data-lazy-load="true" data-title="" id="1047953119" dmle_extension="custom_extension" data-element-type="custom_extension" data-binding="W3siYmluZGluZ05hbWUiOiJwaG9uZSIsInZhbHVlIjoiY29udGVudF9saWJyYXJ5Lmdsb2JhbC5waG9uZS5waG9uZSJ9LHsiYmluZGluZ05hbWUiOiJwaG9uZTIiLCJ2YWx1ZSI6ImNvbnRlbnRfbGlicmFyeS5nbG9iYWwucGhvbmUucGhvbmUyIn0seyJiaW5kaW5nTmFtZSI6InBob25lMyIsInZhbHVlIjoiY29udGVudF9saWJyYXJ5Lmdsb2JhbC5waG9uZS5waG9uZTMifV0=" icon="false" surround="false" data-widget-id="66dae1a547a54519bca9bd0a2d88885c" data-widget-version="32" data-widget-config="eyJwaG9uZSI6Ijk5OC04NzQtMjQyNCIsInByZWZpam9QaG9uZSI6IiAiLCJldGlxdWV0YU1hbnVhbCI6bnVsbCwiaWNvbm8iOnRydWUsImljb25vUGhvbmUiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiB2aWV3Qm94PVwiMCAwIDcwIDcwXCI+IDxnPiA8cGF0aCBkPVwiTTI1LjMsNDQuOEMzNS43LDU1LjMsNDQuMiw1Niw0Ni42LDU2YzMuOSwwLDkuNC01LDkuNC02LjN2LTIuNWMwLTAuNi0wLjQtMS4xLTEtMS4zbC0xMC0zLjJjLTAuNS0wLjItMSwwLTEuNCwwLjNMNDAsNDYuOFxyXG5cdFx0Yy0wLjQsMC40LTEuMSwwLjUtMS42LDAuMmMtMS41LTAuOS00LjgtMi45LTguNi02LjhjLTMuOC0zLjgtNS45LTcuMS02LjgtOC42Yy0wLjMtMC41LTAuMi0xLjIsMC4yLTEuNmwzLjctMy43XHJcblx0XHRjMC40LTAuNCwwLjUtMC45LDAuMy0xLjRsLTMuMi0xMGMtMC4yLTAuNi0wLjctMS0xLjMtMWgtMi41QzE5LDE0LjEsMTQsMTkuNywxNCwyMy41QzE0LDI1LjgsMTQuOCwzNC4zLDI1LjMsNDQuOEwyNS4zLDQ0Ljh6XCI+PC9wYXRoPiA8L2c+IDwvc3ZnPiIsInBob25lMiI6IiIsInByZWZpam9QaG9uZTIiOiIgIiwiZXRpcXVldGFNYW51YWwyIjpudWxsLCJpY29ubzIiOnRydWUsImljb25vUGhvbmUyIjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgdmlld0JveD1cIjAgMCA3MCA3MFwiPiA8Zz4gPHBhdGggZD1cIk0yNS4zLDQ0LjhDMzUuNyw1NS4zLDQ0LjIsNTYsNDYuNiw1NmMzLjksMCw5LjQtNSw5LjQtNi4zdi0yLjVjMC0wLjYtMC40LTEuMS0xLTEuM2wtMTAtMy4yYy0wLjUtMC4yLTEsMC0xLjQsMC4zTDQwLDQ2LjhcclxuXHRcdGMtMC40LDAuNC0xLjEsMC41LTEuNiwwLjJjLTEuNS0wLjktNC44LTIuOS04LjYtNi44Yy0zLjgtMy44LTUuOS03LjEtNi44LTguNmMtMC4zLTAuNS0wLjItMS4yLDAuMi0xLjZsMy43LTMuN1xyXG5cdFx0YzAuNC0wLjQsMC41LTAuOSwwLjMtMS40bC0zLjItMTBjLTAuMi0wLjYtMC43LTEtMS4zLTFoLTIuNUMxOSwxNC4xLDE0LDE5LjcsMTQsMjMuNUMxNCwyNS44LDE0LjgsMzQuMywyNS4zLDQ0LjhMMjUuMyw0NC44elwiPjwvcGF0aD4gPC9nPiA8L3N2Zz4iLCJwaG9uZTMiOiIiLCJwcmVmaWpvUGhvbmUzIjpudWxsLCJldGlxdWV0YU1hbnVhbDMiOm51bGwsImljb25vMyI6dHJ1ZSwiaWNvbm9QaG9uZTMiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiB2aWV3Qm94PVwiMCAwIDcwIDcwXCI+IDxnPiA8cGF0aCBkPVwiTTI1LjMsNDQuOEMzNS43LDU1LjMsNDQuMiw1Niw0Ni42LDU2YzMuOSwwLDkuNC01LDkuNC02LjN2LTIuNWMwLTAuNi0wLjQtMS4xLTEtMS4zbC0xMC0zLjJjLTAuNS0wLjItMSwwLTEuNCwwLjNMNDAsNDYuOFxyXG5cdFx0Yy0wLjQsMC40LTEuMSwwLjUtMS42LDAuMmMtMS41LTAuOS00LjgtMi45LTguNi02LjhjLTMuOC0zLjgtNS45LTcuMS02LjgtOC42Yy0wLjMtMC41LTAuMi0xLjIsMC4yLTEuNmwzLjctMy43XHJcblx0XHRjMC40LTAuNCwwLjUtMC45LDAuMy0xLjRsLTMuMi0xMGMtMC4yLTAuNi0wLjctMS0xLjMtMWgtMi41QzE5LDE0LjEsMTQsMTkuNywxNCwyMy41QzE0LDI1LjgsMTQuOCwzNC4zLDI1LjMsNDQuOEwyNS4zLDQ0Ljh6XCI+PC9wYXRoPiA8L2c+IDwvc3ZnPiIsInBob25lNCI6IiIsInByZWZpam9QaG9uZTQiOm51bGwsImV0aXF1ZXRhTWFudWFsNCI6bnVsbCwiaWNvbm80Ijp0cnVlLCJpY29ub1Bob25lNCI6IjxzdmcgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIHZpZXdCb3g9XCIwIDAgNzAgNzBcIj4gPGc+IDxwYXRoIGQ9XCJNMjUuMyw0NC44QzM1LjcsNTUuMyw0NC4yLDU2LDQ2LjYsNTZjMy45LDAsOS40LTUsOS40LTYuM3YtMi41YzAtMC42LTAuNC0xLjEtMS0xLjNsLTEwLTMuMmMtMC41LTAuMi0xLDAtMS40LDAuM0w0MCw0Ni44XHJcblx0XHRjLTAuNCwwLjQtMS4xLDAuNS0xLjYsMC4yYy0xLjUtMC45LTQuOC0yLjktOC42LTYuOGMtMy44LTMuOC01LjktNy4xLTYuOC04LjZjLTAuMy0wLjUtMC4yLTEuMiwwLjItMS42bDMuNy0zLjdcclxuXHRcdGMwLjQtMC40LDAuNS0wLjksMC4zLTEuNGwtMy4yLTEwYy0wLjItMC42LTAuNy0xLTEuMy0xaC0yLjVDMTksMTQuMSwxNCwxOS43LDE0LDIzLjVDMTQsMjUuOCwxNC44LDM0LjMsMjUuMyw0NC44TDI1LjMsNDQuOHpcIj48L3BhdGg+IDwvZz4gPC9zdmc+IiwicGhvbmU1IjoiIiwicHJlZmlqb1Bob25lNSI6bnVsbCwiZXRpcXVldGFNYW51YWw1IjpudWxsLCJpY29ubzUiOnRydWUsImljb25vUGhvbmU1IjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgdmlld0JveD1cIjAgMCA3MCA3MFwiPiA8Zz4gPHBhdGggZD1cIk0yNS4zLDQ0LjhDMzUuNyw1NS4zLDQ0LjIsNTYsNDYuNiw1NmMzLjksMCw5LjQtNSw5LjQtNi4zdi0yLjVjMC0wLjYtMC40LTEuMS0xLTEuM2wtMTAtMy4yYy0wLjUtMC4yLTEsMC0xLjQsMC4zTDQwLDQ2LjhcclxuXHRcdGMtMC40LDAuNC0xLjEsMC41LTEuNiwwLjJjLTEuNS0wLjktNC44LTIuOS04LjYtNi44Yy0zLjgtMy44LTUuOS03LjEtNi44LTguNmMtMC4zLTAuNS0wLjItMS4yLDAuMi0xLjZsMy43LTMuN1xyXG5cdFx0YzAuNC0wLjQsMC41LTAuOSwwLjMtMS40bC0zLjItMTBjLTAuMi0wLjYtMC43LTEtMS4zLTFoLTIuNUMxOSwxNC4xLDE0LDE5LjcsMTQsMjMuNUMxNCwyNS44LDE0LjgsMzQuMywyNS4zLDQ0LjhMMjUuMyw0NC44elwiPjwvcGF0aD4gPC9nPiA8L3N2Zz4ifQ=="> <div class="generalPhones" style="flex-direction:column; justify-content:;"><!-- Visualización del teléfono 1--> <div class="phoneConteiner non"> <a href="tel:998-874-2424" class="phone-adsa"> <div class="icono-phone"> <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 70 70"> <g> <path d="M25.3,44.8C35.7,55.3,44.2,56,46.6,56c3.9,0,9.4-5,9.4-6.3v-2.5c0-0.6-0.4-1.1-1-1.3l-10-3.2c-0.5-0.2-1,0-1.4,0.3L40,46.8
+		c-0.4,0.4-1.1,0.5-1.6,0.2c-1.5-0.9-4.8-2.9-8.6-6.8c-3.8-3.8-5.9-7.1-6.8-8.6c-0.3-0.5-0.2-1.2,0.2-1.6l3.7-3.7
+		c0.4-0.4,0.5-0.9,0.3-1.4l-3.2-10c-0.2-0.6-0.7-1-1.3-1h-2.5C19,14.1,14,19.7,14,23.5C14,25.8,14.8,34.3,25.3,44.8L25.3,44.8z"></path> 
+</g> 
+</svg> 
+</div> 
+ <label></label> 
+ <label></label> 
+ <label>&nbsp;998-874-2424</label> 
+</a> 
+</div> 
+<!-- Visualización del teléfono 2--><!-- Visualización del teléfono 3--><!-- Visualización del teléfono 4--><!-- Visualización del teléfono 5--></div> 
+</div> 
+</div> 
+ <div id="bc96d10d" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="custom" data-external-id="1091743607"> <div class="widget-97c9bf u_1091743607 dmCustomWidget" data-lazy-load="true" data-title="" id="1091743607" dmle_extension="custom_extension" data-element-type="custom_extension" data-binding="W3siYmluZGluZ05hbWUiOiJ0eHRFbWFpbCIsInZhbHVlIjoiY29udGVudF9saWJyYXJ5Lmdsb2JhbC5lbWFpbC5lbWFpbCJ9XQ==" icon="false" surround="false" data-widget-id="97c9bf9e0ac64c119b09859d80205367" data-widget-version="7" data-widget-config="eyJpY29ubyI6ZmFsc2UsImljb25vMiI6dHJ1ZSwidHh0RW1haWwyIjoiIiwidHh0RW1haWwiOiJjZW50cmFsZGVwbG9tZXJvc0BvdXRsb29rLmNvbSIsImljb25FbWFpbDIiOiI8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiB2aWV3Qm94PVwiMCAwIDEwMCAxMDBcIj4gPHBhdGggZD1cIk0xNy44LDI4LjJ2NDMuNmg2NC40VjI4LjJIMTcuOHogTTc3LjcsMzAuM0w1MCw0OC44TDIyLjMsMzAuM0g3Ny43eiBNMTkuOSw2OS43VjMxLjJMNTAsNTEuMmwzMC4xLTIwLjF2MzguNUgxOS45elwiPjwvcGF0aD4gPC9zdmc+IiwiaWNvbkVtYWlsIjoiPHN2ZyB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgdmlld0JveD1cIjAgMCAxMDAgMTAwXCI+IDxwYXRoIGQ9XCJNMTcuOCwyOC4ydjQzLjZoNjQuNFYyOC4ySDE3Ljh6IE03Ny43LDMwLjNMNTAsNDguOEwyMi4zLDMwLjNINzcuN3ogTTE5LjksNjkuN1YzMS4yTDUwLDUxLjJsMzAuMS0yMC4xdjM4LjVIMTkuOXpcIj48L3BhdGg+IDwvc3ZnPiJ9"> <div class="generalEmail"><!-- Visualización del email 1--> <div class="emailConteiner"> <a href="mailto:centraldeplomeros@outlook.com" class="email-adsa"> <label>centraldeplomeros@outlook.com</label> 
+</a> 
+</div> 
+<!-- Visualización del email 2--></div> 
+</div> 
+</div> 
+ <div id="64157902" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="hoursOfOperation" data-external-id="1332677986"> <div class="u_1332677986 default dmHoursOfOperation" id="1332677986" dmle_extension="open_hours" data-element-type="open_hours" data-binding="W3siYmluZGluZ05hbWUiOiJidXNpbmVzc19ob3VycyIsInZhbHVlIjoiY29udGVudF9saWJyYXJ5Lmdsb2JhbC5idXNpbmVzc19ob3VycyJ9XQ==" time_format="24" wr="true" displaytitle="true" forcedisplay="false" icon="true" surround="true" adwords=""> <h3 class="dmwidget-title ">Horario</h3> 
+ <dl class="open-hours-data"> <div class="open-hours-item"> <dt day="0">Lun - Vie</dt> 
+ <dd> <time>09:00</time> 
+- <time>18:00</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="5">S&aacute;bado</dt> 
+ <dd> <time>10:00</time> 
+- <time>15:00</time> 
+</dd> 
+</div> 
+ <div class="open-hours-item"> <dt day="6">Domingo</dt> 
+ <dd>Cerrado</dd> 
+</div> 
+</dl> 
+</div> 
+</div> 
+ <div id="03ace501" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="custom" data-external-id="1652575017"> <div class="u_1652575017 widget-2b6e49 dmCustomWidget" data-lazy-load="true" data-title="" id="1652575017" dmle_extension="custom_extension" data-element-type="custom_extension" data-binding="W3siYmluZGluZ05hbWUiOiJQaG9uZVdoYXRzYXBwIiwidmFsdWUiOiJjb250ZW50X2xpYnJhcnkuZ2xvYmFsLnBob25lLndoYXRzYXBwLW51bWVybyJ9XQ==" icon="false" surround="false" data-widget-id="2b6e491ddb1a42ec9d783bc8f175b4f3" data-widget-version="80" data-widget-config="eyJQaG9uZVdoYXRzYXBwIjoiNTIxOTk4ODc0MjQyNCIsIm1lbnNhamVEb3MiOm51bGwsIm1lbnNhamVXaGF0c2FwcCI6IsKhSG9sYSEgVmkgdHUgc2l0aW8gQUROLCDCv21lIHBvZHLDrWFzIGJyaW5kYXIgbcOhcyBpbmZvcm1hY2nDs24gc29icmUgdHVzIHNlcnZpY2lvcz8iLCJXaGF0c2FwcHR4dCI6IldoYXRzQXBwIiwiZGlzZW5vMSI6bnVsbCwibXdoYXRzYXBwZG9zIjoiIiwiZGlzZW5vMiI6bnVsbCwidGlwb0Rpc2Vub1dQIjoiZFdoYXRzYXBwMyIsImdyb3VwMiI6bnVsbCwiZ3JvdXAxIjpudWxsfQ=="> <div class="contenedorGralWP"> <a href="https://wa.me/5219988742424?text=¡Hola! Vi tu sitio ADN, ¿me podrías brindar más información sobre tus servicios? " target="_blank"><!--Diseño tres--> <div class="btnDisenotres dmWidget"> <div class="iconoDisenotres"> <svg xmlns="http://www.w3.org/2000/svg" title="WhatsApp" class="tamanoIconoW2" id="Layer_2" viewbox="0 0 75.51 75.1"> <g id="Layer_1-2"> <g> <path d="M37.96,0C17.22,0,.4,16.81,.4,37.55c0,6.64,1.73,12.87,4.75,18.28L0,75.08l19.02-5.1c5.56,3.25,12.02,5.13,18.93,5.13,20.74,0,37.55-16.81,37.55-37.55S58.69,0,37.96,0Z" style="fill:#ececec;"></path> 
+ <path d="M37.92,6.41c-17.2,0-31.15,13.94-31.15,31.15,0,5.51,2.53,12.46,5.04,16.95l-2.54,11.57,11.18-2.7c4.61,2.7,11.74,5.33,17.47,5.33,17.2,0,31.15-13.94,31.15-31.15S55.12,6.41,37.92,6.41Z" style="fill:#65be6c;"></path> 
+ <path d="M20.33,27.71c-.1-2.72,1.56-5.29,4.08-7.37,.48-.4,1.24-.57,1.89-.63,.82-.08,1.67,0,2.48,.14,.36,.07,.81,.41,.97,.74,1.27,2.73,2.47,5.48,3.7,8.22,.31,.68,.04,1.24-.39,1.75-.85,.98-1.7,1.96-2.59,2.9-.54,.57-.58,1.12-.21,1.79,3,5.39,7.54,8.97,13.21,11.21,.64,.25,1.08,.03,1.46-.46,.93-1.2,1.86-2.4,2.8-3.59,.69-.87,1.09-.98,2.09-.52,2.51,1.15,5.02,2.31,7.53,3.47,.9,.42,1.1,.83,.94,1.81-.39,2.46-1.16,4.72-3.31,6.23-2.61,1.82-5.48,2.27-8.53,1.49-5.47-1.39-10.35-3.95-14.64-7.62-3.68-3.14-6.83-6.74-9.2-10.97-1.37-2.44-2.26-5.03-2.27-8.59Z" style="fill:#fcfcfb;"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <span class="text">WhatsApp</span> 
+</div> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div id="widget_46t" class="flex-element widget-wrapper" data-auto="flex-element-widget-wrapper" data-widget-type="form" data-external-id="1581304071"> <div class="dmform default native-inputs u_1581304071" data-element-type="dContactUsRespId" captcha="true" data-require-captcha="true" data-captcha-position="bottomleft" id="1581304071" data-layout="layout-1"> <h3 class="dmform-title dmwidget-title" id="1315692102" hide="true">Cont&aacute;ctenos</h3> 
+ <div class="dmform-wrapper" id="1651699803" captcha-lang="es"> <form method="post" class="dmRespDesignRow" locale="SPANISH_ARGENTINA" id="1602387158"> <div class="dmforminput required  small-12 dmRespDesignCol medium-12 large-12" id="1628749909"> <label for="1655425212" id="1249419929" data-dm-for="dmform-0">Nombre:</label> 
+<input type="text" class="" name="dmform-0" id="1655425212"/><input type="hidden" name="label-dmform-0" value="Name" id="1483896719"/></div> 
+ <div class="dmforminput required  small-12 dmRespDesignCol medium-12 large-12" id="1317020876"> <label for="1607977885" id="1549782312" data-dm-for="dmform-1">Correo:</label> 
+<input type="email" class="" name="dmform-1" id="1607977885"/><input type="hidden" name="label-dmform-1" value="Email" id="1662885772"/></div> 
+ <div class="dmforminput required  small-12 dmRespDesignCol medium-12 large-12" id="1021382266"> <label for="1759944877" id="1026312681" data-dm-for="dmform-2">Tel&eacute;fono</label> 
+<input type="tel" class="" name="dmform-2" id="1759944877"/><input type="hidden" name="label-dmform-2" value="Phone" id="1413995081"/></div> 
+ <div class="dmforminput large-12 medium-12 dmRespDesignCol" id="1469305302"> <label for="1723235600" id="1387927109" data-dm-for="dmform-3">Mensaje:</label> 
+ <textarea name="dmform-3" id="1723235600"></textarea> 
+<input type="hidden" name="label-dmform-3" value="Message" id="1391234610"/></div> 
+ <span id="undefined_clear" class="dmWidgetClear"></span> 
+ <div class="dmformsubmit dmWidget R" id="1634914498"><input class="" name="submit" type="submit" value="Enviar" id="1924921405"/></div> 
+<input name="dmformsendto" type="hidden" value="O0wrseIfFLuS0F5SEiKHc06Ks2zFQbySdMfCrjGYavyzxdDpkayFQOVfK9tbpanAaI5vcwMd42fZlpjuz5UWIQ==" id="1005789580" data-dec="true"/><input class="dmActionInput" type="hidden" name="action" value="/_dm/s/rt/widgets/dmform.submit.jsp" id="1042336080"/><input name="dmformsubject" type="hidden" value="FORMULARIO DE RESPUESTA" id="1741633041"/><input name="dmformfrom" type="hidden" value="" id="1233874086"/><input name="dmformautoreplyenabled" type="hidden" value="true" id="1264281465"/><input name="dmformautoreplyfrom" type="hidden" value="CENTRAL DE PLOMEROS" id="1582446788"/><input name="dmformautoreplysubject" type="hidden" value="Gracias por su envío" id="1567676404"/><input name="dmformautoreplymsg" type="hidden" value="UmVjaWJpbW9zIHN1IG1lbnNhamUsIGdyYWNpYXMuIFVubyBkZSBsb3MgbWllbWJyb3MgZGUgbnVlc3RybyBlcXVpcG8gc2UgcG9uZHLDoSBlbiBjb250YWN0byBjb24gdXN0ZWQgbXV5IHByb250by4=" id="1251164018"/><input name="dmformautoreplyincludeformcopy" type="hidden" value="true" id="1893876230"/><input name="dmformsubmitparams" type="hidden" value="8mpKnCSiNQXK/d9M7IDrS6udsrTOKwrMXC/KEM0yNZQbokNBbMMgQOnJ5s4aVXzCd/vKjl/bDcSYkzhS7bKQs1bmIwdnZI6svbwvkEkO1e0VY21f8bSE0nKmTwjUUc1KqMqj0iXb63l8E4BJ389lcfoARBJqAKvBPjEt2GCsH/5VSLsIUK/Uzttj1Xc6jZEAH85DDX4j8qpMLn1Nj7NUD7XJ49OhT+WG3dY/zphGaALfGA31qrP0RqAi7mGXZnHkuhW+gBsp6sDiQGr9lNkM8m38CgGPt1MSWKEH3tBgUCYJqjSZbaVbfV2jbaERwjcBLLhCaicY+lu0+zQzzZ7p3cutlbPzc1MiZ4gD5xdPHPfIIkQrNkBhULi0yod9LkKz8Zsh2FQbEx/NbcFhpMAONPhjpzJXqYt3vJj2Iz45t51Nec+WSFQ27T4xLdhgrB/+GaHtZJBkK/anPjbHKcHg33uOP779aDcM3wZwHIaGPkrLp4WzCPJTYBQa8NB2jlvnRF+DRjCcWDLPAleYLzEGkGNsBXtRt+SVYf3VJ/5I4kcDDmtYVcuIm1WGD9t5FGNVuWdYDme3gn1C1LBykYyjlQ==" data-dec="true"/><input type="hidden" name="page_uuid" value="1003e47146524210b0c3ee04c62cdc1f"/></form> 
+</div> 
+ <div class="dmform-success" style="display:none" id="1309532038">Gracias por contactarnos.<br id="1599888601"/>Le responderemos tan pronto como sea posible.</div> 
+ <div class="dmform-error" style="display:none" id="1787536389">Se ha producido un error al enviar su mensaje.<br id="1885126568"/>Int&eacute;ntelo de nuevo m&aacute;s tarde.</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</section> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="sticky-widgets-container-global" id="1852288569"></div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1943048428"> <div class="u_1053080410 dmRespRow" id="1053080410"> <div class="dmRespColsWrapper" id="1752614389"> <div class="dmRespCol large-12 medium-12 small-12" id="1577664181"> <div class="widget-e7c808 u_1210262481 dmCustomWidget" data-lazy-load="true" data-title="" id="1210262481" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="e7c808927dac456e86b919971f23fd58" data-widget-version="29" data-widget-config="eyJ0ZXh0VGl0bGUiOnRydWUsIk94eG8iOm51bGwsInNldmVuIjpudWxsLCJjb2xvclBpY2tlcjEiOm51bGwsImNsYXJvIjpudWxsLCJhcHBsZSI6bnVsbCwic2Ftc3VuZyI6bnVsbCwic2VsZWN0ZWRfZGlzZW5vIjoiZGlzZW5vXzIiLCJ0aXRsZVBhZ29zIjoiQWNlcHRhbW9zIGxhcyBzaWd1aWVudGVzIGZvcm1hcyBkZSBwYWdvOiIsInNwZWkiOm51bGwsImNhcm5ldCI6bnVsbCwibWVyY2FkbyI6bnVsbCwiYmF6IjpudWxsLCJjb2RpIjpudWxsLCJwYXltZW50X29wdGlvbnMiOm51bGx9"> <h4 class="title-pagos">Aceptamos las siguientes formas de pago:</h4> 
+ <div class="payment-methods moviendose " id="sortable"><!-- inicia if para ocultar formas de pago volcadas--> <div class="caja-method" id="payment_American" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Amex_2</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M48.81,16.85,46,19.75l-2.68-2.9H34.56v8.86h8.65L46,22.78l2.69,2.93H51.5l-4.09-4.4,4.09-4.46Zm-6.7,7H36.73V22.11h4.79v-1.8H36.73V18.69h5.48l2.39,2.59Z"></path> 
+ <path class="cls-1" d="M58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V38.92a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V3.65A3.64,3.64,0,0,0,58.07,0ZM55.6,27.47l-7.86,0L46,25.53l-1.86,1.92H28.83V25.92l-.65,1.53H24.37L23.71,26v1.5H16.36l-.83-2h-1.9l-.83,2H6.12L11.7,15.1h5.71l.74,1.45V15.1h6.67l1.46,3.19,1.43-3.19H44.36L46.05,17l1.81-1.88H55.6L50,21.31Z"></path> 
+ <path class="cls-1" d="M26.39,22.86l-2.86-6H20v8.38l-3.7-8.38H13L9.08,25.72h2.38l.84-2h4.56l.84,2h4.45V18.77l3.17,7h1.93l3.15-6.95,0,7h2.16V16.85H29Zm-13.31-1,1.5-3.54,1.5,3.54Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">AMEX</p> 
+</div> 
+ <div class="caja-method" id="payment_cheque" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Cheque_2</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M61.72,27.24V3.65A3.64,3.64,0,0,0,58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V27.24ZM42.85,6.77h14v2.8h-14Zm0,5h14v2.8h-14Zm0,5h14v2.8h-14ZM11.2,12.17a6.46,6.46,0,0,1,2.58,3.47A28.22,28.22,0,0,1,23.1,5a7.52,7.52,0,0,0,1.51,4.17A16.68,16.68,0,0,0,14,18.92c-1.21-1.84-2.29-3.8-5.24-3.9C9.79,14.25,10.85,13.57,11.2,12.17Z"></path> 
+ <path class="cls-1" d="M0,36.2v2.72a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V36.2Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Cheque</p> 
+</div> 
+ <div class="caja-method" id="payment_Deposito" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Deposito_2</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V38.92a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V3.65A3.64,3.64,0,0,0,58.07,0ZM23.17,16.33a2.44,2.44,0,0,1,3.48,0L28,17.68V12.49A2.49,2.49,0,0,1,30.48,10,2.49,2.49,0,0,1,33,12.48v5.2l1.35-1.36a2.46,2.46,0,0,1,4.2,1.74,2.7,2.7,0,0,1-.72,1.74l-5.56,5.57a2.46,2.46,0,0,1-3.48,0l-5.57-5.56a2.72,2.72,0,0,1-.72-1.74A2.7,2.7,0,0,1,23.17,16.33ZM47.64,29.68a2.88,2.88,0,0,1-2.88,2.88H17a2.88,2.88,0,0,1-2.88-2.88v-2A2.88,2.88,0,0,0,17,30.52h27.8a2.88,2.88,0,0,0,2.88-2.88Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Dep&oacute;sito</p> 
+</div> 
+ <div class="caja-method" id="payment_Efectivo" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Efectivo_2</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V38.92a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V3.65A3.64,3.64,0,0,0,58.07,0ZM10.39,22.26a1.77,1.77,0,1,1-1.47-2A1.77,1.77,0,0,1,10.39,22.26ZM31.31,35.79C25,36,19.65,29.65,19.4,21.64S24.08,7,30.41,6.78s11.66,6.14,11.91,14.15S37.64,35.59,31.31,35.79ZM54.83,20.87a1.77,1.77,0,1,1-1.47-2A1.78,1.78,0,0,1,54.83,20.87Z"></path> 
+ <path class="cls-1" d="M32.07,19.37H32l-.17-5.29a9,9,0,0,1,4.08,1.51l1.75-2.65A11.72,11.72,0,0,0,31.73,11l-.05-1.43-1.8,0,0,1.41a6.86,6.86,0,0,0-4.38,1.83,5.14,5.14,0,0,0-1.58,4,4.51,4.51,0,0,0,1.59,3.63,11.44,11.44,0,0,0,4.73,1.86l.17,5.47a9.87,9.87,0,0,1-4.95-2.3l-2,2.51a12.28,12.28,0,0,0,7,2.86l.07,2,1.8,0-.06-2a7.23,7.23,0,0,0,4.56-1.84A5.09,5.09,0,0,0,38.54,25a4.66,4.66,0,0,0-1.64-3.71A11.45,11.45,0,0,0,32.07,19.37ZM28,17.93a2,2,0,0,1-.61-1.47,2,2,0,0,1,.67-1.6,3.36,3.36,0,0,1,2-.81l.15,4.87A5.63,5.63,0,0,1,28,17.93ZM34.37,27a3.91,3.91,0,0,1-2.12.85l-.16-5.07a6.35,6.35,0,0,1,2.35,1,2.07,2.07,0,0,1,.67,1.55A2,2,0,0,1,34.37,27Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Efectivo</p> 
+</div> 
+ <div class="caja-method" id="payment_Mastercard" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1,.cls-2{;}.cls-2{opacity:0.8;}</style> 
+</defs> 
+ <title>Master Card_2</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V38.92a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V3.65A3.64,3.64,0,0,0,58.07,0ZM37.8,31.89a11.11,11.11,0,0,1-6.94-2.43,11.17,11.17,0,1,1,0-17.5A11.18,11.18,0,1,1,37.8,31.89Z"></path> 
+ <path class="cls-2" d="M26.63,20.71a11.16,11.16,0,0,0,4.23,8.76,11.19,11.19,0,0,0,0-17.52A11.16,11.16,0,0,0,26.63,20.71Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Mastercard</p> 
+</div> 
+ <div class="caja-method" id="payment_Paypal" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Paypal</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M17.39,22a.71.71,0,0,0,.7,1.1,1.35,1.35,0,0,0,1.39-1,6,6,0,0,1,.15-.71H19A1.85,1.85,0,0,0,17.39,22Z"></path> 
+ <path class="cls-1" d="M37.31,16.67H35.89l-.59,2.75h1.33a1.83,1.83,0,0,0,1.68-1.37A1,1,0,0,0,37.31,16.67Z"></path> 
+ <path class="cls-1" d="M11.63,16.67H10.21l-.62,2.75H11a1.81,1.81,0,0,0,1.66-1.37A1,1,0,0,0,11.63,16.67Z"></path> 
+ <path class="cls-1" d="M43.14,22c-.38.61.15,1.13.74,1.1a1.34,1.34,0,0,0,1.38-1c.06-.25.09-.46.15-.71h-.65A1.93,1.93,0,0,0,43.14,22Z"></path> 
+ <path class="cls-1" d="M58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V38.92a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V3.65A3.64,3.64,0,0,0,58.07,0ZM11.25,21.34H9.18l-.71,3.33H5.57l2.19-10H12.7a2.62,2.62,0,0,1,2.63,3.42A4,4,0,0,1,11.25,21.34Zm11.43-1.92-1.13,5.25H18.9l.18-.79c-1.4,1.43-5,1.53-4.4-1.77.41-1.93,2.39-2.54,5.33-2.54.17-.85-.41-1.07-1.4-1a8,8,0,0,0-2.53.55l.23-1.92a12.84,12.84,0,0,1,3-.49C21.11,16.64,23.15,17.19,22.68,19.42ZM23,28l1.94-3.29-1.09-7.9h2.65l.43,4.68,2.59-4.68h2.73L25.94,28Zm13.94-6.67h-2l-.74,3.33H31.29l2.18-10H38.4A2.63,2.63,0,0,1,41,18.05,4.05,4.05,0,0,1,36.92,21.34ZM48.5,19.42l-1.15,5.25H44.7l.18-.79c-1.44,1.43-5.07,1.53-4.48-1.77.42-1.93,2.42-2.54,5.39-2.54.21-.85-.38-1.07-1.38-1a8.26,8.26,0,0,0-2.59.56l.23-1.93a13.75,13.75,0,0,1,3-.49C46.94,16.64,49,17.19,48.5,19.42Zm2.76,5.25H48.57l2.2-10.07h2.71Zm3.43-10h-.45V15.9h-.17V14.71h-.45v-.16h1.07Zm1.46,1.19H56V14.77l-.39,1.13h-.16L55,14.75V15.9h-.17V14.55h.26l.32.95a2,2,0,0,0,.07.2s0-.12.07-.21l.32-.94h.24Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Paypal</p> 
+</div> 
+ <div class="caja-method" id="payment_Transferencia" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Transferencia_2</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V38.92a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V3.65A3.64,3.64,0,0,0,58.07,0ZM35.75,31.8c-.3,0-.66,0-1.07.07a12.24,12.24,0,0,1-1.4-.09,6.75,6.75,0,0,1-1.66-.27,8.75,8.75,0,0,1-1.83-.57l-.94-.4c-.32-.15-.6-.36-.91-.53a12,12,0,0,1-1.76-1.28,17.33,17.33,0,0,1-1.55-1.54,19.89,19.89,0,0,1-1.28-1.7,18.19,18.19,0,0,1-1-1.7c-.32-.55-.54-1.1-.78-1.6-.33-.77-.59-1.46-.77-2a12.13,12.13,0,0,1-1.84.65,10,10,0,0,1-2.14.38,10.23,10.23,0,0,1,.78-2,12.74,12.74,0,0,1,1-1.73,16.84,16.84,0,0,1,2.54-2.84,2.18,2.18,0,0,1,2.52-.28l.15.09A16.49,16.49,0,0,1,27.35,17a12.65,12.65,0,0,1,1.51,1.73c.24.32.46.66.67,1a9,9,0,0,1,.58,1.16,9.33,9.33,0,0,1-1.29,0q-.6,0-1.2-.12a13.2,13.2,0,0,1-2.23-.53l-.22-.08c0,.25.07.51.12.79.11.44.19.93.35,1.43A12.4,12.4,0,0,0,26.16,24c.18.56.49,1.05.73,1.61a14.76,14.76,0,0,0,1,1.53,8.86,8.86,0,0,0,1.21,1.38c.23.21.43.44.67.62l.73.52a7.63,7.63,0,0,0,1.48.85,6.72,6.72,0,0,0,1.46.58,10.41,10.41,0,0,0,1.29.37l1,.16.91.15Zm8.33-7.9A11.59,11.59,0,0,1,43,25.59a16,16,0,0,1-2.63,2.76,2.18,2.18,0,0,1-2.52.21l-.15-.09a16.68,16.68,0,0,1-3.46-2.71A13.59,13.59,0,0,1,32.78,24c-.21-.33-.43-.67-.63-1a9.7,9.7,0,0,1-.55-1.17,7.9,7.9,0,0,1,1.29,0q.61.06,1.2.15a12.92,12.92,0,0,1,2.22.6l.22.08c0-.24-.07-.51-.11-.79-.09-.44-.15-.94-.3-1.44a12.86,12.86,0,0,0-.48-1.58c-.16-.56-.45-1.06-.67-1.63A15.86,15.86,0,0,0,34,15.63a8.76,8.76,0,0,0-1.17-1.41,7.86,7.86,0,0,0-.65-.64L31.5,13A7.79,7.79,0,0,0,30,12.15a6.58,6.58,0,0,0-1.43-.63,10.9,10.9,0,0,0-1.29-.4l-1-.2-.91-.17.93,0,1.07,0a10.88,10.88,0,0,1,1.4.13,6.85,6.85,0,0,1,1.65.32,8.74,8.74,0,0,1,1.8.62l.93.43c.31.16.59.38.9.56a11.53,11.53,0,0,1,1.71,1.33,17.42,17.42,0,0,1,1.51,1.59A19.57,19.57,0,0,1,38.5,17.4a15.93,15.93,0,0,1,1,1.73c.3.56.51,1.11.73,1.62.31.78.54,1.48.71,2.06a12.25,12.25,0,0,1,1.86-.6,9.6,9.6,0,0,1,2.15-.31A10.36,10.36,0,0,1,44.08,23.9Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Transferencia</p> 
+</div> 
+ <div class="caja-method" id="payment_Vales" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 63.31 43.66" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Vale_2</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M15,23.25,15,22.12a7.42,7.42,0,0,1-4.28-1.61L11.82,19a5.92,5.92,0,0,0,3,1.3L14.65,17a6.86,6.86,0,0,1-2.88-1,2.73,2.73,0,0,1-1-2.15,3.12,3.12,0,0,1,.89-2.46,4.12,4.12,0,0,1,2.61-1.17l-.05-.85,1.08-.07.05.87a7.12,7.12,0,0,1,3.6,1.06l-1,1.63A5.53,5.53,0,0,0,15.44,12l.19,3.19h0a7,7,0,0,1,2.93,1.06,2.83,2.83,0,0,1,1.05,2.21,3.06,3.06,0,0,1-.91,2.48A4.41,4.41,0,0,1,16,22.07l.07,1.16a7.37,7.37,0,1,0-1.08,0Z"></path> 
+ <path class="cls-1" d="M17.6,18.7a1.2,1.2,0,0,0-.42-.92,3.66,3.66,0,0,0-1.43-.57l.18,3.05a2.45,2.45,0,0,0,1.26-.55A1.21,1.21,0,0,0,17.6,18.7Z"></path> 
+ <path class="cls-1" d="M12.81,13.46a1.19,1.19,0,0,0,.39.88,3.46,3.46,0,0,0,1.33.56L14.35,12a2,2,0,0,0-1.17.52A1.22,1.22,0,0,0,12.81,13.46Z"></path> 
+ <path class="cls-1" d="M63.31,3.74A3.75,3.75,0,0,0,59.56,0H3.74A3.75,3.75,0,0,0,0,3.74V39.92a3.75,3.75,0,0,0,3.74,3.74H59.56a3.75,3.75,0,0,0,3.75-3.74ZM34,12.47H46.19a1,1,0,1,1,0,2.06H34a1,1,0,0,1,0-2.06ZM15.33,7.94h3.85a4.85,4.85,0,0,1,.93.06A8.76,8.76,0,0,1,23.4,9.09l.33.2,0,0A7.94,7.94,0,0,1,27.45,16c0,4.36-4,7.88-8.34,7.88H15.4a8.05,8.05,0,0,1-6.05-2.71L9.24,21A7.52,7.52,0,0,1,7.32,16,7.82,7.82,0,0,1,15.33,7.94ZM55.29,36H7.53c-1.21,0-2.19-.34-2.19-.76s1-.76,2.19-.76H55.29c1.21,0,2.19.34,2.19.76S56.5,36,55.29,36Zm1.16-17.2H34a1,1,0,0,1,0-2.06H56.45a1,1,0,0,1,0,2.06Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Vales</p> 
+</div> 
+ <div class="caja-method" id="payment_Visa" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Visa_2</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M48.55,18.09c-.19.52-.53,1.37-.51,1.33l-1.53,3.92H49.7c-.15-.7-.89-4.05-.89-4.05Z"></path> 
+ <path class="cls-1" d="M58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V38.92a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V3.65A3.64,3.64,0,0,0,58.07,0ZM14.93,28.29,11.56,16.17a16,16,0,0,0-4.2-1.67v-.22h6.33a1.65,1.65,0,0,1,1.77,1.19L16.85,22h0l.34,1.92L21,14.28H25.1l-6.1,14Zm9.26,0,2.38-14h3.84L28,28.29Zm10.27.22a12.13,12.13,0,0,1-4.28-.74l.54-3.14.5.22a8,8,0,0,0,3.61.74c1.11,0,2.29-.43,2.3-1.37,0-.61-.49-1-2-1.74s-3.39-1.79-3.37-3.8c0-2.73,2.7-4.63,6.5-4.63a10,10,0,0,1,3.44.59l-.52,3-.35-.16A7,7,0,0,0,38,17c-1.5,0-2.2.62-2.2,1.2s.81,1.09,2.16,1.74c2.21,1,3.24,2.21,3.22,3.81C41.12,26.64,38.5,28.51,34.46,28.51Zm16.29-.22-.46-2.15H45.43l-.79,2.15H40.58l5.69-12.82a1.91,1.91,0,0,1,2-1.19H51.2l3.16,14Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Visa</p> 
+</div> 
+ <div class="caja-method" id="payment_credito" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Tarjeta de credito</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M61.72,7.53V3.65A3.64,3.64,0,0,0,58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V7.53Z"></path> 
+ <path class="cls-1" d="M48.32,27.8a6,6,0,0,0,0,9.26,6,6,0,0,0,0-9.26Z"></path> 
+ <path class="cls-1" d="M0,16.5V38.92a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V16.5ZM19.38,37.9h-13a1,1,0,1,1,0-2.08h13a1,1,0,0,1,0,2.08Zm0-4.32h-13a1,1,0,0,1,0-2.08h13a1,1,0,0,1,0,2.08Zm0-4.32h-13a1,1,0,1,1,0-2.08h13a1,1,0,0,1,0,2.08Zm32.69,9.13a6,6,0,0,1-3.75-1.33,6,6,0,1,1,0-9.26,6,6,0,1,1,3.75,10.59Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Tarjeta de Cr&eacute;dito</p> 
+</div> 
+ <div class="caja-method" id="payment_payment_options_debit_cards" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Tarjeta de credito</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M61.72,7.53V3.65A3.64,3.64,0,0,0,58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V7.53Z"></path> 
+ <path class="cls-1" d="M48.32,27.8a6,6,0,0,0,0,9.26,6,6,0,0,0,0-9.26Z"></path> 
+ <path class="cls-1" d="M0,16.5V38.92a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V16.5ZM19.38,37.9h-13a1,1,0,1,1,0-2.08h13a1,1,0,0,1,0,2.08Zm0-4.32h-13a1,1,0,0,1,0-2.08h13a1,1,0,0,1,0,2.08Zm0-4.32h-13a1,1,0,1,1,0-2.08h13a1,1,0,0,1,0,2.08Zm32.69,9.13a6,6,0,0,1-3.75-1.33,6,6,0,1,1,0-9.26,6,6,0,1,1,3.75,10.59Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Tarjeta de D&eacute;bito</p> 
+</div> 
+ <div class="caja-method" id="payment_Oxxo" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Oxxo_2</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M0,10.88H41.72l.61,0-.57.4-5.9,7.26L34,16.26,31.87,19l1.84,2.38c-1.41,1.8-2.84,3.59-4.2,5.43A2.14,2.14,0,0,0,29,28.39a2.47,2.47,0,0,0,1.33,1.36,1.86,1.86,0,0,0,1.59-.54C33,28,34,26.59,35,25.27c.27-.34.55-.67.87-1.06,1.26,1.61,2.46,3.17,3.67,4.71.91,1.14,1.8,1.34,2.69.62s.86-1.63,0-2.7c-1.38-1.79-2.78-3.56-4.31-5.52,2.4-2.9,4.72-5.9,7.29-8.66.83-.9,1.17-1.86,2-1.63.38.06,2.29.06,2.68.06H61.72V3.65A3.64,3.64,0,0,0,58.07,0H3.65A3.64,3.64,0,0,0,0,3.65Z"></path> 
+ <path class="cls-1" d="M42.85,21.15A8.63,8.63,0,0,0,51.42,30a8.69,8.69,0,0,0,.11-17.37A8.56,8.56,0,0,0,42.85,21.15Zm13.82.1a5.27,5.27,0,0,1-5.13,5.22,5.16,5.16,0,0,1-5.22-5.19,5.09,5.09,0,0,1,5.08-5.19A5.17,5.17,0,0,1,56.67,21.25Z"></path> 
+ <path class="cls-1" d="M21.33,31.5A6.22,6.22,0,0,1,20,31.22L25.85,24c.63.76,1.23,1.5,1.89,2.32l2.1-2.8L28,21.13c1.42-1.83,2.81-3.61,4.19-5.4.82-1.06.77-2-.09-2.69s-1.74-.5-2.62.6c-1.22,1.54-2.42,3.1-3.67,4.72-1.3-1.67-2.56-3.27-3.81-4.89a1.72,1.72,0,0,0-2.09-.74,1.67,1.67,0,0,0-.73,2.68c1.23,1.64,2.52,3.23,3.77,4.85.22.28.43.58.7.95-2.19,2.72-4.33,5.46-6.57,8.11a6.49,6.49,0,0,1-4.75,2.38,6.41,6.41,0,0,0-1-.18H0c0-2.23,0,7.4,0,7.4a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65v-7.4Q41.53,31.52,21.33,31.5Z"></path> 
+ <path class="cls-1" d="M1.58,21.22A8.66,8.66,0,0,0,10.24,30a8.69,8.69,0,0,0,0-17.37A8.58,8.58,0,0,0,1.58,21.22Zm8.65-5.13a5.15,5.15,0,0,1,5.18,5.23,5.25,5.25,0,0,1-5.2,5.15A5.15,5.15,0,0,1,5.07,21.2,5.08,5.08,0,0,1,10.23,16.09Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Oxxo</p> 
+</div> 
+ <div class="caja-method" id="payment_spei" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 61.72 42.57" style="max-height: 100%;max-width: 100%;"> <defs> <style>.cls-1{;}</style> 
+</defs> 
+ <title>Spei_2</title> 
+ <g id="Capa_2" data-name="Capa 2"> <g id="Capa_1-2" data-name="Capa 1"> <path class="cls-1" d="M28.86,17.15A6.43,6.43,0,0,0,26.38,17c0,1.05,0,2,0,3,0,.09.22.26.33.26a13.89,13.89,0,0,0,1.71-.09A1.45,1.45,0,0,0,29.76,19,1.71,1.71,0,0,0,28.86,17.15Z"></path> 
+ <path class="cls-1" d="M58.07,0H3.65A3.64,3.64,0,0,0,0,3.65V38.92a3.65,3.65,0,0,0,3.65,3.65H58.07a3.65,3.65,0,0,0,3.65-3.65V3.65A3.64,3.64,0,0,0,58.07,0ZM21.29,25.24a4.5,4.5,0,0,1-3.11,3,10.14,10.14,0,0,1-6.53-.05,4.22,4.22,0,0,1-2.9-3.57c0-.18-.06-.36-.08-.54a1.8,1.8,0,0,1,0-.27c.48,0,1-.11,1.44-.14.72-.05,1.43-.07,2.15-.11a.42.42,0,0,1,.49.31,5,5,0,0,0,.3.76,2.29,2.29,0,0,0,3.63.73,1.24,1.24,0,0,0-.23-2.06,4.51,4.51,0,0,0-1.06-.45c-1.14-.38-2.29-.73-3.42-1.12a4.58,4.58,0,0,1-2-1.31,3.6,3.6,0,0,1,1-5.6,8.2,8.2,0,0,1,4.62-1A8.71,8.71,0,0,1,19.39,15a3.07,3.07,0,0,1,1.39,2.12c.07.32.12.64.19,1l-.82.08c-.87.06-1.75.1-2.61.17a.65.65,0,0,1-.72-.34,7.58,7.58,0,0,0-.6-.88A2.05,2.05,0,0,0,13.46,17a.9.9,0,0,0,.27,1.5c1.29.39,2.58.74,3.87,1.13a12,12,0,0,1,1.6.61A4,4,0,0,1,21.29,25.24Zm12.46-4.52a3.83,3.83,0,0,1-3.38,2.21C29.24,23,28.1,23,27,23h-.59V28c0,.53,0,.56-.57.56H22.42c-.34,0-.45-.1-.45-.44q0-6.74,0-13.46c0-.38.13-.51.5-.5,2.31,0,4.62,0,6.92,0a10.24,10.24,0,0,1,1.92.19A3.25,3.25,0,0,1,34.05,17,5.49,5.49,0,0,1,33.75,20.72Zm12.81,7.71H35.63c-.48,0-.52,0-.52-.5q0-6.62,0-13.21c0-.39.15-.5.51-.5H46.54c.33,0,.5.08.48.47,0,.81,0,1.63,0,2.54H39.56c0,.53,0,1,0,1.46,0,.88,0,.89.9.88l5.33-.08h.48v2.9l-.48,0H40.09c-.54,0-.54,0-.55.56s0,1.18,0,1.76c0,.37.13.5.47.5.18,0,.37,0,.55,0h6.37a.73.73,0,0,1,.09.22c0,.88,0,1.75,0,2.63C47,28.42,46.81,28.43,46.56,28.43ZM53,28.37c-.12,0-.26.07-.39.08h-3.4c-.25,0-.4-.06-.4-.36,0-1.67,0-3.35,0-5,0-.57,0-.58.57-.58,1,0,1,0,1,1,0,.46,0,.92,0,1.38a3.94,3.94,0,0,0,.1.47l.15,0c.73-1.06,1.47-2.11,2.21-3.16l.1,0Zm0-8.66a4,4,0,0,1-.31-.33L51.08,17a4.58,4.58,0,0,0-.35-.42l-.12,0v2.74H48.82a4.66,4.66,0,0,1-.06-.49c0-1.33,0-2.66,0-4,0-.55.06-.61.62-.61h3.1c.18,0,.36,0,.57,0Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">SPEI</p> 
+</div> 
+ <div class="caja-method" id="payment_claro" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewbox="0 0 61.72 42.57"> <defs> <style>.cls-1{fill:#35475c;}</style> 
+</defs> 
+ <g id="Layer_1-2"> <g> <path class="cls-1" d="M26.4,26.83h-3.51c-.1,0-.2,.07-.25,.16l-.59,1.27s.02,.07,.06,.07h3.07c.57,0,1.09-.33,1.33-.84l.13-.28c.09-.18-.05-.37-.25-.37Z"></path> 
+ <path class="cls-1" d="M34.92,29.45h-3.52c-.1,0-.2,.07-.25,.16l-.17,.36c-.08,.17,.05,.37,.25,.37h3.39c.18,0,.35-.1,.43-.27l.11-.24c.09-.18-.05-.37-.25-.37Z"></path> 
+ <path class="cls-1" d="M41.07,21.16c.61,0,1.11-.2,1.53-.63,.42-.43,.62-.93,.65-1.51-.02-.61-.23-1.11-.63-1.53-.44-.43-.95-.64-1.55-.62-.59-.02-1.09,.19-1.51,.62-.42,.41-.65,.92-.65,1.53s.23,1.08,.65,1.51c.42,.42,.92,.63,1.51,.63Z"></path> 
+ <path class="cls-1" d="M27.55,19.54c-.41,.06-.73,.15-.92,.26-.32,.21-.48,.49-.48,.88,0,.35,.1,.59,.29,.76,.18,.15,.41,.22,.69,.22,.46,0,.85-.13,1.23-.39,.35-.26,.54-.73,.54-1.4h0v-.79l-.38,.21-.98,.24Z"></path> 
+ <path class="cls-1" d="M58.09,0H3.65C1.64,0,0,1.62,0,3.63V38.92c0,2.02,1.63,3.65,3.65,3.65H58.07c2.02,0,3.65-1.63,3.65-3.65V3.65C61.73,1.64,60.1,0,58.09,0Zm-9.09,9.34l1.25,1.23-4.73,4.67-1.25-1.23,4.73-4.67Zm-8.57-.96h1.76v5.01h-1.76v-5.01Zm-2.23,7.76c.8-.8,1.76-1.19,2.87-1.19s2.09,.38,2.91,1.19c.79,.8,1.19,1.77,1.19,2.88s-.4,2.08-1.19,2.87c-.82,.8-1.8,1.21-2.91,1.21s-2.08-.4-2.87-1.21c-.81-.78-1.21-1.75-1.21-2.87s.4-2.09,1.21-2.88Zm-5.93-.83l1.87,.02v.98c.4-.53,.87-.89,1.4-1.1l.76-.21,.48-.04,.02,1.98-.6-.04c-.38,0-.73,.11-1.07,.34-.29,.21-.54,.44-.68,.74-.17,.28-.25,.72-.25,1.36v3.71h-1.94v-7.75Zm-3.68,1.43c-.23-.13-.54-.21-.96-.19-.49-.02-.83,.11-1.04,.37-.13,.15-.25,.37-.29,.71h-1.96c.06-.71,.23-1.26,.57-1.7,.53-.68,1.45-1.04,2.78-1.02,.85-.02,1.61,.15,2.28,.51,.64,.34,.98,.99,.97,1.93v5.69h-1.97v-.81c-.61,.52-1.45,.79-2.53,.81-.67-.02-1.21-.21-1.61-.54-.45-.41-.68-.97-.66-1.66-.02-.99,.34-1.68,1.07-2.11,.44-.24,1.01-.41,1.7-.51l1.51-.24c.3-.13,.46-.34,.46-.6-.02-.32-.11-.54-.34-.66Zm-7.5-3.78h1.96v10.09h-1.96V12.95Zm-5.87,10.07c-1.42,0-2.59-.49-3.57-1.45-1.01-.99-1.49-2.2-1.49-3.58s.49-2.58,1.49-3.56c.98-1,2.15-1.49,3.57-1.47,1.14-.02,2.18,.33,3.08,1.04,.89,.68,1.47,1.58,1.78,2.66h-2.05c-.27-.52-.64-.96-1.11-1.28-.53-.34-1.07-.51-1.68-.51-.87,0-1.6,.32-2.21,.93-.62,.61-.92,1.34-.9,2.19-.02,.86,.29,1.58,.9,2.2,.6,.59,1.34,.91,2.21,.91,.61,0,1.15-.17,1.68-.49,.47-.34,.85-.76,1.11-1.28h2.05c-.3,1.08-.89,1.95-1.78,2.66-.91,.69-1.95,1.03-3.08,1.03Zm9.69,7.07h-3.56c-.09,0-.17,.05-.21,.13l-.66,1.4c-.13,.3-.44,.49-.77,.49h-1.31s-.07-.05-.06-.08l2.99-6.45c.14-.31,.47-.52,.81-.52h6.66c.39,0,.65,.4,.48,.75l-1.02,2.15c-.6,1.29-1.91,2.13-3.36,2.13Zm14.24-4.65l-2.87,6.17c-.12,.3-.42,.5-.75,.5h-6.19c-.61,0-1.02-.63-.77-1.17l1.27-2.75c.13-.3,.44-.49,.77-.49h5.24c.18,0,.35-.1,.43-.27l.1-.22c.09-.18-.05-.37-.25-.37h-5.24c-.2,0-.33-.21-.25-.37l.42-.9c.13-.29,.44-.49,.76-.49h7.07c.2,0,.33,.21,.25,.37Zm9.25,.12l-4.32,2.94-1.46,3.13c-.14,.3-.44,.49-.77,.49h-1.33s-.08-.05-.06-.08l1.65-3.57-2.03-2.99c-.12-.18,0-.41,.23-.41h1.19c.28,0,.54,.14,.69,.37l1.01,1.49,2.54-1.71c.14-.1,.3-.15,.48-.15h2.01c.27,0,.37,.34,.17,.5Zm3.16-7.86v1.22h-5.19v-1.73h5.19v.52Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Claro pay</p> 
+</div> 
+ <div class="caja-method" id="payment_samsung" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewbox="0 0 61.72 42.57"> <defs> <style>.cls-1{fill:#35475c;}</style> 
+</defs> 
+ <g id="Layer_1-2"> <g> <path class="cls-1" d="M19.92,24.46c-.39,.59-.46,1.25-.42,1.93,.08,1.43,.95,2.29,2.67,2.32,.62,0,1.36-.44,1.78-1.32,.47-.98,.4-1.98-.17-2.9-.86-1.37-2.98-1.38-3.87-.03Z"></path> 
+ <path class="cls-1" d="M31.92,23.58c-.92-.27-1.77-.1-2.44,.62-.92,.97-.91,2.8,0,3.78,.91,.98,2.55,1,3.44,.03,.5-.54,.62-1.22,.64-1.93-.03-.25-.04-.49-.09-.73-.17-.89-.66-1.51-1.54-1.77Z"></path> 
+ <path class="cls-1" d="M58.09,0H3.65C1.64,0,0,1.62,0,3.63V38.92c0,2.02,1.63,3.65,3.65,3.65H58.07c2.02,0,3.65-1.63,3.65-3.65V3.65C61.73,1.64,60.1,0,58.09,0ZM31.41,17.49c.3,.11,.69,.02,.85-.2,.18-.23,.21-.65,0-.87-.21-.23-.47-.43-.73-.61-.45-.29-.94-.53-1.39-.83-.8-.54-1.04-1.21-.81-2.16,.15-.63,.59-.99,1.18-1.16,.7-.2,1.41-.21,2.12-.04,.97,.24,1.37,.88,1.25,1.97h-1.6c0-.11-.01-.21-.02-.31-.01-.36-.17-.58-.47-.65-.32-.08-.63,.03-.76,.27-.17,.3-.12,.64,.17,.86,.31,.24,.67,.41,1,.62,.44,.28,.93,.52,1.32,.87,1.09,.99,.62,2.89-.79,3.28-.73,.2-1.48,.19-2.21-.02-.86-.25-1.29-.86-1.29-1.75,0-.16,0-.33,0-.51h1.77c0,.19,0,.37,0,.55-.01,.32,.12,.54,.42,.65Zm-11.31-5.74h2.75c.28,1.7,.55,3.4,.83,5.1h.08c.06-.32,.12-.64,.17-.97,.21-1.31,.42-2.63,.64-3.94,.01-.08,.13-.2,.2-.21,.84-.01,1.68,0,2.58,0,.05,2.26,.1,4.49,.15,6.73h-1.67v-6.04h-.12c-.38,2-.75,4.01-1.13,6.04h-1.69c-.38-2-.76-4.02-1.14-6.04h-.1v6.04h-1.7c.05-2.23,.1-4.46,.15-6.71Zm-8.38,5.79c-.15,.6-.64,.9-1.2,1.05-.73,.2-1.47,.2-2.21,0-.87-.24-1.34-.86-1.36-1.78,0-.17,0-.33,0-.54h1.78c0,.22,0,.41,0,.6,.02,.37,.18,.57,.5,.66,.32,.09,.65,0,.81-.24,.18-.26,.2-.66-.02-.9-.22-.23-.48-.42-.75-.59-.48-.31-.99-.57-1.46-.88-.66-.43-.89-1.07-.79-1.83,.08-.69,.44-1.18,1.1-1.4,.83-.28,1.67-.29,2.5-.03,.74,.23,1.21,.85,1.02,1.95h-1.57c-.02-.16-.03-.32-.05-.48-.04-.31-.23-.48-.53-.52-.27-.04-.53,.01-.68,.26-.15,.26-.16,.55,.04,.78,.15,.17,.34,.31,.53,.42,.47,.28,.96,.52,1.43,.81,1.04,.64,1.23,1.37,.91,2.65Zm4.12-5.2h-.09c-.31,2.03-.62,4.06-.93,6.12h-1.78c.07-.42,.13-.83,.21-1.24,.32-1.74,.66-3.49,.98-5.23,.04-.21,.12-.27,.32-.27,.83,0,1.66,0,2.49,0,.16,0,.26,.01,.29,.22,.38,2.09,.78,4.18,1.17,6.27,.01,.08,0,.16,0,.25h-1.75c-.3-2.05-.61-4.09-.91-6.12Zm10.12,14.14c-.15,1.76-1.35,3.25-3.02,3.65-1.2,.29-2.34,.13-3.34-.82v3.77h-1.66v-10.89h1.68v.66c.05,0,.08,.02,.09,0,1.14-1.13,2.47-1.09,3.83-.54,1.59,.64,2.59,2.41,2.43,4.17Zm9.16,3.3c0,.09,0,.18-.01,.3h-1.64l-.03-.65c-.45,.23-.87,.52-1.33,.66-2.06,.6-4.13-.56-4.82-2.66-.75-2.3,.54-4.75,2.84-5.34,.63-.16,1.27-.16,1.9-.01,.52,.12,.96,.37,1.38,.78,0-.16,0-.32,0-.48,0-.16,.06-.22,.22-.22,.42,0,.85,0,1.27,0,.18,0,.25,.07,.23,.24,0,.03,0,.06,0,.09,0,2.43,0,4.87,0,7.3Zm.59-12.96c-.04-1.67-.01-3.33,0-5,0-.02,.01-.04,.03-.07h1.66v.38c0,1.55,.02,3.11,0,4.66,0,.61,.61,.88,1.07,.62,.3-.17,.33-.45,.33-.75,0-1.18,0-2.36,0-3.54v-1.37h1.65c0,.1,.01,.2,.01,.3,0,1.51-.02,3.02,0,4.54,.02,1.55-.82,1.96-1.9,2.07-.46,.05-.94,.01-1.39-.07-.94-.18-1.43-.75-1.46-1.76Zm8.29,6.82c-1.3,3.06-2.61,6.12-3.9,9.18-.08,.2-.18,.29-.41,.28-.48-.02-.97,0-1.49,0,.17-.41,.33-.78,.49-1.14,.29-.66,.57-1.33,.87-1.99,.1-.21,.11-.39,0-.61-1.04-2.25-2.07-4.51-3.1-6.76-.05-.12-.1-.24-.18-.43,.6,0,1.15-.01,1.7,.01,.08,0,.17,.16,.22,.26,.73,1.68,1.46,3.35,2.18,5.03,.04,.09,.08,.18,.16,.34,.12-.3,.22-.53,.31-.76,.61-1.52,1.22-3.05,1.82-4.58,.09-.24,.22-.32,.48-.31,.47,.02,.95,0,1.48,0-.22,.52-.42,1.01-.63,1.49Zm4.08-5.22c-.76,0-1.5,0-2.24-.01-.07,0-.17-.15-.2-.25-.5-1.63-1-3.26-1.49-4.89-.04-.12-.07-.23-.16-.33v5.47h-1.56v-6.67c.8,0,1.58,0,2.37,.01,.06,0,.16,.14,.18,.23,.47,1.56,.92,3.13,1.38,4.69,.03,.11,.07,.23,.15,.33v-5.25h1.57v6.67Zm6.67-3.33c-.01,.6,.02,1.2-.04,1.8-.1,.95-.52,1.38-1.45,1.61-.59,.15-1.19,.15-1.78,.02-1.02-.23-1.52-.83-1.54-1.88-.02-1.02-.02-2.05,0-3.08,.02-1.22,.65-1.91,1.88-2,.55-.04,1.13-.01,1.66,.13,1.09,.3,1.28,1.1,1.24,1.95,0,.06-.12,.17-.19,.17-.48,.01-.95,0-1.48,0,0-.17,0-.32,0-.47-.02-.36-.24-.6-.59-.65-.39-.05-.7,.12-.81,.46-.03,.11-.05,.22-.05,.33,0,1.06,0,2.11,0,3.17,0,.61,.55,.96,1.1,.68,.14-.07,.31-.23,.33-.38,.06-.39,.05-.78,.05-1.17,0-.06-.12-.15-.2-.16-.15-.03-.31,0-.49,0v-.9h2.38c0,.12,0,.24,0,.36Z"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Samsung pay</p> 
+</div> 
+ <div class="caja-method" id="payment_codi" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewbox="0 0 61.72 42.57"> <g id="Layer_1-2"> <g> <path d="M40.19,18.54c-.96-.51-1.97-.42-2.99-.41v7.49c.6,0,1.18,.05,1.74,0,1.6-.17,2.92-1.43,3.2-2.99,.3-1.68-.49-3.3-1.95-4.07Z" style="fill:#35475c;"></path> 
+ <path d="M58.09,0H3.65C1.64,0,0,1.62,0,3.63V38.92c0,2.02,1.63,3.65,3.65,3.65H58.07c2.02,0,3.65-1.63,3.65-3.65V3.65C61.73,1.64,60.1,0,58.09,0ZM16.16,24.89c1.4,1.31,3.83,1.53,5.59-.18,.44,.72,.88,1.44,1.32,2.16-1.88,1.82-5.7,2.43-8.48,0-2.82-2.46-3.04-6.73-.49-9.4,2.67-2.79,6.72-2.53,8.97-.47-.44,.72-.87,1.43-1.33,2.18-.96-.98-2.13-1.37-3.46-1.19-1.05,.14-1.93,.65-2.59,1.49-1.32,1.67-1.14,3.92,.47,5.43Zm23.17,3.22c-.77,.1-1.55,.06-2.33,.07-.78,0-1.55,0-2.35,0V15.56c.28,0,.54,0,.8,0,1.18,.01,2.36-.02,3.53,.06,1.83,.13,3.31,.98,4.45,2.42,.88,1.12,1.32,2.4,1.32,3.81,0,3.26-2.38,5.86-5.41,6.26Zm9.22,.06h-2.39v-9.38h2.39v9.38Zm-.88-10.19c-1.39,.27-2.64-1.07-2.3-2.5,.05-.19,0-.31-.12-.44-1.46-1.57-3.26-2.48-5.36-2.79-2.36-.35-4.58,.07-6.58,1.42-1.73,1.17-2.85,2.79-3.49,4.76-.04,.12-.06,.22,.09,.28,1.33,.47,2.26,1.38,2.74,2.68,.69,1.87,.51,3.67-.78,5.24-1.11,1.36-2.61,1.93-4.34,1.67-1.87-.28-3.16-1.36-3.82-3.12-.99-2.66,.32-5.58,2.88-6.5,.29-.1,.6-.15,.9-.22,.2-.03,.27-.15,.32-.34,.88-2.93,2.57-5.24,5.3-6.71,4.43-2.38,10.11-1.46,13.56,2.19,.21,.22,.38,.34,.72,.34,1.09,.02,1.93,.84,1.99,1.84,.07,1.1-.61,1.97-1.72,2.19Z" style="fill:#35475c;"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">CoDi</p> 
+</div> 
+ <div class="caja-method" id="payment_apple" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewbox="0 0 61.72 42.57"> <g id="Layer_1-2"> <g> <path d="M38.06,22.67c-.74,.12-1.11,.67-1.11,1.32,0,.64,.39,1.12,1.12,1.32,1.54,.42,3.8-.32,3.41-3.02-1.15,.12-2.29,.19-3.42,.38Z" style="fill:#35475c;"></path> 
+ <path d="M30.26,14.82c-1.26-.41-2.57-.16-3.87-.22v5.63c1.08,0,2.12,.07,3.15-.02,1.16-.1,2.03-.7,2.3-1.9,.11-.49,.11-1.03,.05-1.54-.12-.97-.68-1.66-1.63-1.96Z" style="fill:#35475c;"></path> 
+ <path d="M58.09,0H3.65C1.64,0,0,1.62,0,3.63V38.92c0,2.02,1.63,3.65,3.65,3.65H58.07c2.02,0,3.65-1.63,3.65-3.65V3.65C61.73,1.64,60.1,0,58.09,0ZM13.79,14.19c.36-1.23,1.18-2.03,2.39-2.43,.1-.03,.2-.07,.29-.11h.37c-.03,.8-.19,1.57-.67,2.23-.6,.82-1.37,1.32-2.52,1.34,.05-.37,.04-.72,.13-1.04Zm6.12,9.16c-.4,1.1-1.01,2.08-1.8,2.95-.77,.84-1.52,1.03-2.56,.56-1.05-.47-2.05-.46-3.09,0-1.05,.47-1.72,.31-2.51-.55-1.39-1.52-2.21-3.31-2.48-5.35-.02-.15-.06-.3-.09-.44v-.92c.09-.43,.16-.87,.28-1.29,.55-1.9,2.34-3.14,4.11-2.82,.46,.08,.91,.26,1.35,.44,.47,.19,.91,.19,1.38,0,.5-.19,1-.38,1.52-.5,1.31-.29,2.84,.34,3.59,1.47-1.07,.78-1.73,1.79-1.64,3.16,.09,1.35,.82,2.29,2.03,2.92-.03,.12-.05,.24-.09,.35Zm9.78-1.25c-.92,.04-1.83,.01-2.75,.02-.17,0-.33,0-.56,0v4.86h-2.18V12.78c.08-.01,.15-.03,.22-.03,1.8,0,3.61-.04,5.41,.02,1.63,.05,2.96,.75,3.78,2.2,1.48,2.64,.4,6.96-3.92,7.13Zm13.96,4.74s-.03,.08-.05,.15h-1.97v-1.67c-.12,.11-.16,.13-.19,.17-1.16,1.59-3.32,2.1-5.07,1.18-1.08-.57-1.6-1.49-1.59-2.68,.01-1.21,.62-2.09,1.74-2.49,.75-.27,1.56-.39,2.36-.49,.86-.11,1.73-.12,2.59-.17,.2-1.4-.22-2.23-1.25-2.48-1.07-.27-2.53-.06-2.94,1.33h-1.97c.04-.84,.38-1.51,.97-2.06,1.53-1.41,4.61-1.5,6.23-.19,.69,.56,1.11,1.29,1.12,2.17,.03,2.41,.01,4.82,.01,7.23Zm10.57-9.78c-1.27,3.56-2.54,7.11-3.82,10.67-.09,.24-.19,.48-.29,.72-.9,1.98-2.42,2.78-4.51,2.35v-1.66c.26,0,.53,0,.8,0,.65-.03,1.14-.32,1.44-.9,.32-.64,.46-1.24,.17-1.99-1.14-3-2.21-6.04-3.3-9.06-.06-.15-.11-.31-.18-.52,.75,0,1.43-.02,2.12,.02,.11,0,.25,.22,.3,.37,.78,2.47,1.54,4.94,2.31,7.42,.06,.18,.13,.36,.22,.65,.46-1.48,.89-2.86,1.32-4.24,.4-1.28,.81-2.56,1.18-3.84,.09-.29,.22-.38,.51-.37,.59,.02,1.19,0,1.83,0-.05,.17-.07,.28-.11,.39Z" style="fill:#35475c;"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Apple pay</p> 
+</div> 
+ <div class="caja-method" id="payment_baz" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewbox="0 0 61.72 42.57"> <g id="Layer_1-2"> <g> <path d="M34.52,19.68c-.87,.04-1.52,.76-1.52,1.7,0,.85,.69,1.65,1.59,1.6,.9-.01,1.53-.72,1.53-1.67,0-1.02-.85-1.66-1.6-1.63Z" style="fill:#35475c;"></path> 
+ <path d="M19.69,18.28c-.77-.08-1.51,.09-2.24,.3-.39,.11-.79,.21-1.14,.39-.57,.3-1.1,.66-1.64,1.01-.4,.25-.68,.61-.9,1.02-.23,.44-.25,.91-.05,1.37,.2,.44,.54,.78,.94,1.03,1.02,.65,2.14,1,3.37,1,.41-.05,.82-.08,1.22-.14,.67-.11,1.22-.45,1.68-.93,.4-.42,.65-.96,.73-1.53,.12-.85,.07-1.71-.36-2.49-.35-.64-.91-.96-1.62-1.04Zm-1.84,4.64c-.8,0-1.57-.62-1.59-1.59,0-.87,.7-1.58,1.56-1.59,.87,0,1.62,.72,1.6,1.58-.02,.98-.77,1.6-1.58,1.6Z" style="fill:#35475c;"></path> 
+ <path d="M42.91,19.68c-.83-.02-1.57,.7-1.57,1.62,0,.94,.65,1.7,1.56,1.68,.91,0,1.57-.7,1.57-1.66,0-.91-.69-1.62-1.56-1.64Z" style="fill:#35475c;"></path> 
+ <path d="M23.81,14.35c-1.01-.83-2.17-1.26-3.48-1.3-1.17-.04-2.27,.24-3.33,.7-1.54,.67-2.9,1.61-4.1,2.77-1.54,1.49-2.81,3.15-3.43,5.23-.25,.85-.33,1.7-.16,2.58,.2,1.02,.75,1.81,1.53,2.47,1.02,.87,2.22,1.38,3.51,1.67,.83,.19,1.69,.28,2.53,.38,.89,.1,1.79,.03,2.68-.08,1.33-.17,2.59-.52,3.78-1.14,1.15-.6,2.11-1.41,2.79-2.53,.66-1.08,.95-2.28,.94-3.56,.01-1.07-.18-2.13-.55-3.16-.57-1.57-1.4-2.97-2.71-4.04Zm.86,9.68c-.03,.32-.15,.62-.28,.92-.25,.6-.7,.96-1.22,1.25-.52,.29-1.08,.48-1.67,.61-.79,.17-1.58,.28-2.39,.31-.62-.08-1.24-.13-1.86-.24-.56-.1-1.12-.21-1.66-.39-.64-.22-1.24-.53-1.79-.95-.48-.37-.87-.81-1.13-1.35-.16-.32-.26-.68-.35-1.03-.19-.67-.13-1.36,.02-2.02,.16-.75,.44-1.46,.8-2.14,.36-.66,.79-1.25,1.36-1.74,.51-.44,1.09-.77,1.75-.97,.56-.17,1.11-.25,1.68-.2,.54,.04,1.06,.18,1.57,.39,.78,.31,1.46,.76,2.08,1.3,.96,.83,1.73,1.82,2.31,2.95,.26,.52,.41,1.09,.61,1.64,.2,.54,.21,1.09,.16,1.65Z" style="fill:#35475c;"></path> 
+ <path d="M58.09,0H3.65C1.64,0,0,1.62,0,3.63V38.92c0,2.02,1.63,3.65,3.65,3.65H58.07c2.02,0,3.65-1.63,3.65-3.65V3.65C61.73,1.64,60.1,0,58.09,0ZM17.78,31.66c-5.66-.02-10.34-4.62-10.31-10.39,.02-5.77,4.59-10.35,10.38-10.35,5.81,0,10.36,4.62,10.37,10.37,.02,5.74-4.65,10.4-10.44,10.37Zm19.13-7.3c-1.18,.81-2.74,.8-3.93-.22,0,.17,0,.3,0,.43,.01,.19-.07,.24-.25,.24-.55,0-1.11,0-1.66,0-.3,0-.3,0-.3-.31,0-2.37,0-4.74,0-7.1,0-.9,0-1.79,0-2.69,0-.05,0-.11,.01-.19,.14,0,.28,0,.42,0,.56,0,1.12,0,1.68,0,.16,0,.18,.07,.18,.2,0,1.14,0,2.27,0,3.41,0,.09,0,.18,0,.3,.32-.17,.58-.33,.86-.45,.76-.34,1.53-.29,2.29-.02,1.35,.49,2.23,1.89,2.23,3.32,0,1.29-.47,2.35-1.54,3.08Zm9.76,.44h-2.15v-.66c-.2,.13-.35,.24-.51,.34-1.06,.65-2.15,.63-3.2,.02-1.38-.8-1.91-2.08-1.74-3.63,.15-1.37,.87-2.37,2.16-2.89,1.08-.43,2.11-.32,3.05,.39,.05,.04,.1,.07,.15,.1,.01,0,.03,0,.08,0v-.58h2.17v6.9Zm7.58,0h-6.36c0-.46,0-.92,0-1.38,0-.06,.06-.12,.11-.17,.88-.94,1.76-1.89,2.63-2.83,.15-.16,.29-.33,.48-.55-.29,0-.52,0-.75,0-.67,0-1.34,0-2.01,0-.13,0-.23,0-.23-.18,0-.55,0-1.11,0-1.66,0-.15,.09-.16,.2-.16,1.79,0,3.58,0,5.38,0h.38c0,.37-.03,.74,0,1.1,.03,.32-.09,.53-.3,.76-.91,.99-1.8,1.98-2.7,2.98,0,0,0,.03-.02,.08h3.18v2Z" style="fill:#35475c;"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Baz</p> 
+</div> 
+ <div class="caja-method" id="payment_mercado" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewbox="0 0 61.72 42.57"> <g id="Layer_1-2"> <g> <path d="M22.27,13.78s.42,.02,.63,.02c.52,0,1.05-.15,1.66-.32,.69-.19,1.46-.41,2.35-.43,.92-.76,2.29-1.62,4.72-1.67,.05,0,.11,0,.16,0,2.07,0,4.05,.94,4.14,.98,1.58,.77,3.21,1.16,4.85,1.17,1.59,0,3.24-.38,4.97-1.13-3.59-2.69-8.92-4.4-14.88-4.4s-10.94,1.61-14.52,4.15c2.37,.89,5.33,1.62,5.92,1.64Z" style="fill:#35475c;"></path> 
+ <path d="M40.77,14.29c-1.75,0-3.49-.42-5.18-1.24-.2-.09-2-.9-3.8-.9-.05,0-.1,0-.14,0-2.89,.07-4.15,1.32-5.48,2.65l-1.7,1.83h-.01c-.08,.12-.1,.19-.07,.23,.21,.26,.76,.44,1.37,.44,.25,0,.49-.03,.73-.08,.55-.12,1.27-.7,1.97-1.26l.04-.03c.75-.6,1.53-1.22,2.31-1.46,.34-.11,.67-.17,.98-.17,.33,0,.59,.06,.77,.12,.41,.12,.88,.4,1.57,.92,1.21,.91,5.67,4.78,7.6,6.47,.83-.37,4.12-1.79,8.54-2.78-.42-2.28-1.79-4.36-3.85-6.09-1.97,.9-3.84,1.35-5.66,1.35Z" style="fill:#35475c;"></path> 
+ <path d="M12.64,19.15c5.16,1.17,7.08,2.4,7.57,2.77,.37-.37,.87-.57,1.39-.57,.59,0,1.16,.27,1.53,.74,.39-.28,.83-.42,1.3-.42,.27,0,.55,.05,.84,.15,.51,.17,.9,.51,1.14,.97,.23-.09,.46-.13,.71-.13,.32,0,.65,.07,.97,.21,1.14,.49,1.22,1.6,1.18,2.19,.03,0,.06,0,.08,0,1.28,0,2.33,1.05,2.33,2.33,0,.34-.08,.68-.22,.99,.32,.17,.94,.45,1.53,.45,.07,0,.14,0,.21-.01,.57-.07,.76-.26,.81-.34,.04-.05,.06-.09,.06-.1l-1.56-1.72c-.1-.09-.32-.34-.17-.5,.04-.05,.1-.07,.17-.07,.13,0,.26,.11,.36,.19,.76,.64,1.69,1.58,1.79,1.68l.02,.02c.06,.07,.18,.12,.36,.15,.07,.01,.16,.02,.25,.02,.17,0,.58-.03,.89-.28,.06-.05,.12-.1,.17-.16l.06-.08c.34-.43-.03-.86-.04-.88l-1.83-2.06s-.07-.06-.13-.14c-.14-.19-.1-.3-.04-.36,.04-.04,.1-.07,.16-.07,.12,0,.25,.09,.37,.19,.5,.41,1.18,1.08,1.83,1.73l.36,.35c.06,.04,.33,.22,.72,.22,.29,0,.59-.1,.89-.29,.42-.27,.61-.62,.6-1.04-.03-.39-.34-.68-.35-.68l-2.51-2.52c-.16-.14-.3-.35-.18-.5,.04-.05,.1-.08,.16-.08,.12,0,.25,.09,.37,.2,.79,.66,2.94,2.63,2.96,2.65,.02,.01,.31,.21,.73,.21,.28,0,.56-.09,.82-.26,.31-.2,.49-.48,.5-.8,.03-.57-.37-.92-.38-.92-.06-.05-6.33-5.53-7.74-6.6-.79-.6-1.24-.75-1.7-.81-.05,0-.1,0-.16,0-.19,0-.43,.03-.63,.09-.7,.19-1.61,.84-2.25,1.34-.8,.64-1.56,1.24-2.28,1.41-.23,.05-.47,.08-.73,.08-.68,0-1.42-.19-1.83-.46-.22-.15-.38-.32-.45-.5-.19-.45,.1-.82,.24-.95l1.72-1.87c.11-.11,.22-.22,.33-.33-.42,.08-.82,.19-1.18,.29-.61,.17-1.24,.35-1.87,.35-.28,0-.57-.03-.83-.05-.95-.06-3.96-.84-6.44-1.86-2.18,1.74-3.64,3.85-4.13,6.17,.35,.1,.9,.26,1.14,.31Z" style="fill:#35475c;"></path> 
+ <path d="M42.29,22.42c.21,.34,.3,.73,.27,1.12-.05,.57-.35,1.07-.85,1.39-.39,.25-.81,.38-1.23,.38-.14,0-.29-.02-.43-.04,.01,.45-.13,1.15-.94,1.68-.42,.28-.86,.42-1.31,.42-.14,0-.29-.01-.43-.04v.02c-.04,.37-.34,.79-.75,1.09-.42,.31-.84,.46-1.27,.46-.24,0-.44-.04-.63-.1-.02,.05-.05,.09-.08,.13-.17,.24-.54,.55-1.34,.65-.1,.01-.19,.02-.3,.02-.8,0-1.59-.38-1.97-.59-.44,.45-1.04,.71-1.67,.71-.95,0-1.79-.58-2.15-1.44-.19,.07-.4,.11-.6,.11-.25,0-.51-.05-.78-.16-.74-.3-1.08-.77-1.22-1.15-.15,.04-.3,.06-.45,.06-.23,0-.47-.05-.7-.14-.8-.31-1.33-.92-1.49-1.72-.12,.02-.24,.03-.36,.03-1.09,0-1.97-.89-1.97-1.98,0-.26,.05-.52,.15-.76-.29-.23-2.03-1.45-7.3-2.62-.17-.04-.94-.22-1.1-.26-.03,.27-.06,.54-.06,.82,0,6.91,8.76,12.51,19.56,12.51s19.56-5.6,19.56-12.51c0-.21-.03-.41-.05-.62-3.64,.82-6.73,1.95-8.09,2.53Z" style="fill:#35475c;"></path> 
+ <path d="M26.11,27.53c.18,.07,.36,.11,.52,.11,.35,0,.59-.18,.78-.35,.07-.06,.13-.1,.19-.1,.16,0,.17,.19,.17,.27,.03,.85,.73,1.52,1.59,1.52,.88,0,1.59-.71,1.6-1.59,0-.87-.72-1.59-1.59-1.6h0c-.22,0-.46,.08-.62,.14-.11,.04-.17,.06-.23,.06h-.03l-.05-.02c-.09-.06-.09-.17,0-.42,0-.02,.54-1.5-.63-2-.24-.1-.47-.15-.68-.15-.47,0-.78,.24-.91,.39-.03,.03-.08,.07-.14,.07-.02,0-.14,0-.15-.17-.02-.28-.14-.94-.88-1.17-.18-.06-.36-.08-.54-.08-.92,0-1.42,.76-1.44,.79l-.18,.28-.04-.33c-.08-.62-.61-1.08-1.22-1.08-.68,0-1.24,.56-1.24,1.24,0,.68,.56,1.24,1.24,1.24,.32,0,.62-.12,.86-.35l.08-.08,.08,.07s.06,.09,.05,.16c-.06,.34-.15,1.47,1.04,1.93,.14,.06,.29,.08,.43,.08,.26,0,.51-.09,.77-.27,.06-.05,.11-.06,.16-.06h.06l.06,.05c.05,.05,.04,.12,.03,.19-.04,.25-.02,.87,.88,1.24Z" style="fill:#35475c;"></path> 
+ <path d="M58.09,0H3.65C1.64,0,0,1.62,0,3.63V38.92c0,2.02,1.63,3.65,3.65,3.65H58.07c2.02,0,3.65-1.63,3.65-3.65V3.65C61.73,1.64,60.1,0,58.09,0Zm-6.89,21.29c0,7.78-7.89,14.07-20.34,14.07s-20.34-6.3-20.34-14.07c0-.07,0-.59,0-.78,0-7.33,9.11-13.3,20.34-13.3s20.34,5.97,20.34,13.3v.78Z" style="fill:#35475c;"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Mercado pago</p> 
+</div> 
+ <div class="caja-method" id="payment_seven" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewbox="0 0 61.72 42.57"> <g id="Layer_1-2"> <g> <path d="M25,23.03h-1.57v5.19h2.87v-.99c-.43-.04-.82-.08-1.3-.13v-4.06Z" style="fill:#35475c;"></path> 
+ <path d="M31.58,14.17c2.03-2.06,4.48-3.7,6.73-5.49H20.55v7c2.51,0,4.91-.08,7.3,.03,1.55,.07,2.57-.35,3.73-1.53Z" style="fill:#35475c;"></path> 
+ <path d="M41.72,15.98v-7.58c-6.37,2.37-12.47,8.28-13.05,13.78h7.4c.94-2.95,2.94-4.91,5.65-6.2Z" style="fill:#35475c;"></path> 
+ <path d="M22.71,26.03c.4-1.36-.88-.6-1.19-1.01-.32-1.22,.77-.65,1.26-1.01-.02-.3-.04-.64-.06-.99h-2.82v5.23h2.84v-1.02c-.44-.06-.83-.11-1.18-.16-.41-1.33,.79-.74,1.16-1.04Z" style="fill:#35475c;"></path> 
+ <path d="M31.48,23.05h-1.44c.29,1.79,.56,3.51,.84,5.25,.59,0,1.05,.07,1.48-.03,.28-.06,.69-.33,.74-.57,.34-1.53,.6-3.07,.89-4.68h-1.2c-.21,1.06-.41,2.07-.67,3.38-.25-1.29-.44-2.28-.64-3.35Z" style="fill:#35475c;"></path> 
+ <path d="M37.37,23.94c-.02-.25-.04-.57-.07-.93h-2.84v5.22h2.91c-.02-.38-.04-.7-.06-1.02-.28-.02-.46-.03-.65-.04-.18-.01-.35-.03-.59-.06,.02-.35,.03-.63,.04-.89q1.26-.15,1.08-1.02l-1.05-.09c-.45-1.35,.81-.69,1.22-1.16Z" style="fill:#35475c;"></path> 
+ <path d="M58.09,0H3.65C1.64,0,0,1.62,0,3.63V38.92c0,2.02,1.63,3.65,3.65,3.65H58.07c2.02,0,3.65-1.63,3.65-3.65V3.65C61.73,1.64,60.1,0,58.09,0Zm-11.75,6.81c-.59,5.74-1.14,11.49-1.7,17.23-.37,3.8-.74,7.61-1.12,11.41-.1,.98-.63,1.44-1.65,1.43-2.06-.03-4.11,0-6.21,0-.04,.52-.08,.96-.12,1.45h-9.08c-.04-.45-.07-.88-.12-1.45-2.17,0-4.27-.03-6.36,.01-1.13,.02-1.64-.48-1.74-1.57-.57-5.89-1.17-11.78-1.76-17.68-.34-3.43-.69-6.86-1.03-10.29-.04-.37-.08-.75-.09-1.12-.04-1.35,.49-1.93,1.86-1.95,1.99-.02,3.98,0,5.97,0,6.98,0,13.96,0,20.94,0,1.96,0,2.43,.61,2.23,2.54Z" style="fill:#35475c;"></path> 
+ <path d="M29.66,27.22c-.47-.05-.83-.09-1.19-.13l-.2-.33c.28-.21,.57-.42,.84-.64,.25-.21,.49-.43,.73-.65l-.28-.29c-.36-.03-.73-.05-1.06-.08-.46-1.39,.83-.68,1.22-1.16-.01-.25-.03-.57-.05-.91h-2.83v5.18h2.91c-.04-.4-.07-.71-.1-1Z" style="fill:#35475c;"></path> 
+ <path d="M41.1,22.93c-.95-.09-1.93,.07-2.93,.14v5.18h1.5c0-1.13-.03-2.21,.02-3.29,.01-.25,.3-.48,.46-.72,.14,.25,.39,.5,.4,.76,.05,1.08,.02,2.15,.02,3.27h1.59c0-1.51,.07-2.93-.05-4.34-.03-.37-.64-.95-1.02-.99Z" style="fill:#35475c;"></path> 
+ <path d="M27.98,28.88c-.22,0-.62,.34-.63,.54-.17,2.75-.28,5.51-.41,8.3h8.28v-8.87c-2.37,0-4.8-.01-7.23,.02Z" style="fill:#35475c;"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Seven Eleven</p> 
+</div> 
+ <div class="caja-method" id="payment_carnet" style="display:none"> <div class="method"> <svg class="Icolor" xmlns="http://www.w3.org/2000/svg" id="Layer_2" viewbox="0 0 61.72 42.57"> <g id="Layer_1-2"> <g> <path d="M29.03,30c-.09-.32-.54-.71-.86-.75-.83-.11-1.68-.04-2.55-.04v1.8c.92-.05,1.76-.08,2.6-.14,.53-.04,.97-.32,.81-.87Z" style="fill:#35475c;"></path> 
+ <path d="M17.32,32.07h2.33c-.41-.85-.78-1.62-1.2-2.49-.41,.9-.76,1.69-1.13,2.49Z" style="fill:#35475c;"></path> 
+ <path d="M58.09,0H3.65C1.64,0,0,1.62,0,3.63V38.92c0,2.02,1.63,3.65,3.65,3.65H58.07c2.02,0,3.65-1.63,3.65-3.65V3.65C61.73,1.64,60.1,0,58.09,0ZM8.55,33.28c.64,.57,1.46,.69,2.22,.31,.48-.24,.84-.71,1.36-1.17,.31,.07,.81,.18,1.36,.3-.14,.82-.6,1.38-1.28,1.69-1.64,.76-3.31,.78-4.82-.28-.56-.39-.91-1.1-1.35-1.66v-1.96c.58-1.1,1.31-2.05,2.62-2.35,1.17-.27,2.35-.34,3.44,.19,.6,.29,1.07,.84,1.52,1.41-.78,.15-1.42,.76-2.18-.14-.96-1.14-3.12-.5-3.48,.95-.24,.97-.25,1.98,.59,2.72Zm13.45,1.49c-.72,.11-1.2-.1-1.39-.85-.13-.51-.46-.71-1.03-.67-.76,.06-1.53,0-2.3,.03-.22,.01-.6,.17-.63,.32-.32,1.36-1.29,1.28-2.39,1.1,1.07-2.14,2.12-4.26,3.2-6.38,.21-.41,1.88-.43,2.09-.02,1.11,2.1,2.19,4.22,3.34,6.46-.41,0-.66-.03-.9,0Zm6.67-.94c-.21-.37-.58-.65-.84-1-.55-.72-1.27-.97-2.22-.79v2.7h-1.7v-6.55c1.77,0,3.51-.05,5.24,.02,1.05,.05,1.69,.74,1.74,1.61,.05,.92-.47,1.55-1.51,1.83-.18,.05-.36,.09-.45,.11,.85,.93,1.7,1.87,2.68,2.95-1.25,.08-2.29,.28-2.95-.89Zm10.75,.86c-.91,.15-1.72,.22-2.37-.76-.8-1.19-1.77-2.27-2.67-3.39l-.17,.04v4.15h-1.5v-6.61c.85-.14,1.63-.21,2.26,.75,.83,1.26,1.84,2.39,2.91,3.76v-4.54h1.54v6.6Zm8.5,.02h-6.49v-6.61h6.27v1.08h-4.59v1.49h4.3v1.15h-4.3v1.81h4.81v1.08Zm-.13-11.3c-2.24-4.06-6.13-5.58-10.34-6.5-5.9-1.29-11.73-1-17.39,1.2-2.18,.85-4.18,2.02-5.6,3.96-.31,.42-.56,.9-.9,1.45-.39-1.33-.25-2.5,.31-3.63,.78-1.57,2.04-2.66,3.5-3.58,2.66-1.67,5.62-2.49,8.69-2.92,4.88-.69,9.71-.39,14.39,1.26,2.44,.86,4.71,2.04,6.35,4.14,1.14,1.45,1.53,3.3,.99,4.63Zm.19-5.94c-.02,.18-.08,.36-.18,.76-.91-2.11-2.43-3.4-4.2-4.44-2.58-1.51-5.41-2.29-8.35-2.69-4.69-.65-9.33-.36-13.85,1.12-2.57,.85-4.96,2.02-6.7,4.18-.4,.5-.71,1.08-1.1,1.69-.51-1.78-.09-3.33,1.01-4.72,1.76-2.23,4.18-3.49,6.82-4.27,2.01-.59,4.1-.88,6.15-1.32,.17-.04,.33-.12,.49-.18h4.77c1.06,.16,2.12,.3,3.18,.48,3.48,.6,6.8,1.63,9.55,3.95,1.67,1.41,2.68,3.14,2.41,5.42Zm7.72,11.73h-2.57v5.51h-1.7v-5.51h-2.59v-1.15h6.86v1.14Z" style="fill:#35475c;"></path> 
+</g> 
+</g> 
+</svg> 
+</div> 
+ <p class="texto-method">Carnet</p> 
+</div> 
+</div> 
+</div> 
+ <div class="widget-17621d dmCustomWidget" data-lazy-load="true" data-title="" id="1732336353" dmle_extension="custom_extension" data-element-type="custom_extension" icon="false" surround="false" data-widget-id="17621d8856184b11a7828ff5eb1a9ea9" data-widget-version="1" data-widget-config="eyJhbHQiOiJMb2dvIEFETiIsInRpcG9Mb2dvIjoiYmxhbmNvIn0="> <div class="contentLogo"> <a href="https://www.aceleradordigitaldenegocios.com.mx/" target="_blank"><img src="https://graficos.seccionamarilla.com.mx/ADN/logo-adn-WHITE.png" class="imagenLogo" alt="Logo ADN" name="Logo ADN" onerror="handleImageLoadError(this)"/></a> 
+</div> 
+</div> 
+ <div class="widget-7e51f0 u_1953355434 dmCustomWidget" data-lazy-load="true" data-title="" id="1953355434" dmle_extension="custom_extension" data-element-type="custom_extension" data-binding="W3siYmluZGluZ05hbWUiOiJudW1lcm9fd2hhdHNhcHAiLCJ2YWx1ZSI6ImNvbnRlbnRfbGlicmFyeS5nbG9iYWwucGhvbmUud2hhdHNhcHAtbnVtZXJvIn1d" icon="false" surround="false" data-widget-id="7e51f0343e5846baaf0b80a6f8e0f774" data-widget-version="291" data-widget-config="eyJudW1lcm9faW50ZXJ2YWxvcyI6IjAwOjMwIiwibWVuc2FqZV93aGF0c2FwcCI6IsKhSG9sYSEgVmkgdHUgc2l0aW8gQUROLCDCv21lIHBvZHLDrWFzIGJyaW5kYXIgbcOhcyBpbmZvcm1hY2nDs24gc29icmUgdHVzIHNlcnZpY2lvcz8iLCJpY29ub19yZXNlcnZhIjpudWxsLCJudW1lcm9fd2hhdHNhcHAiOiI1MjE5OTg4NzQyNDI0IiwiY29kaWdvX3BhaXMiOm51bGx9"> <script src="https://minegocio.seccionamarilla.com.mx/interacciones/forms/resourcesengage/interactAdn.js">
+            </script> 
+ <script>
+
+
+$(document).ready(function () 
+{
+    dmAPI.loadCollectionsAPI().then(api => {
+    api.data("SITE_INFORMATION")
+    .select('full_crm')
+        .get()
+        .then(json => 
+        {
+            try
+            {
+                let my_full_crm = '';
+                my_full_crm = json.values[0].data.full_crm;
+                if(my_full_crm === 'NO')
+                {
+                    jQuery(function () {
+                        const siteName = dmAPI.getSiteName();
+                        var optsAdn = { siteName: siteName };
+                        CCMgrAdn.engageStart(optsAdn);
+                    });
+                }
+            } catch (error) 
+            {
+               jQuery(function () {
+                    const siteName = dmAPI.getSiteName();
+                    var optsAdn = { siteName:siteName };
+                    CCMgrAdn.engageStart(optsAdn);
+                });
+            }
+        });
+    });
+    
+});
+
+
+            </script> 
+ <p class="texto_naranja_widgetengage" id="btnWidgetVer" style="display:none"> <i class="fa fa-calendar" aria-hidden="true"></i> 
+ <b>Engage ---</b> 
+ <button id="btnSaveEngage">Guardar</button> 
+</p> 
+ <div id="btn_engage" class="container-bnt-mas" style="display:none"> <div class="interactPluginX"> <div class="engage_icons floatingType" style="right: 15px; top: 120px;"> <div class="container-botones"> <div class="contactos-btn"> <div class="floating-engage scheduler contact btnm" onmouseover="this.children[0].classList.add('tooltip');" onmouseout="this.children[0].classList.remove('tooltip');"> <div class="buttonCaption" style="font-family:Verdana, 'Verdana Fallback';">Vista previa</div> 
+ <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 37.7 42.9" enable-background="new 0 0 37.7 42.9" xml:space="preserve"> <g> <path d="M36.4,0H1.3C0.6,0,0,0.6,0,1.3v40.3c0,0.7,0.6,1.3,1.3,1.3h35.2c0.7,0,1.3-0.6,1.3-1.3V1.3
+                    		C37.7,0.6,37.1,0,36.4,0z M34.2,38.9H3.6V8.6h30.6V38.9z"></path> 
+ <path d="M9.2,15.5h19.3c0.7,0,1.3-0.6,1.3-1.3v-1.1c0-0.7-0.6-1.3-1.3-1.3H9.2c-0.7,0-1.3,0.6-1.3,1.3v1.1
+                    		C7.9,14.9,8.5,15.5,9.2,15.5z"></path> 
+ <path d="M9.2,22.4h19.3c0.7,0,1.3-0.6,1.3-1.3V20c0-0.7-0.6-1.3-1.3-1.3H9.2c-0.7,0-1.3,0.6-1.3,1.3v1.1
+                    		C7.9,21.8,8.5,22.4,9.2,22.4z"></path> 
+ <path d="M9.2,29.2h19.3c0.7,0,1.3-0.6,1.3-1.3v-1.1c0-0.7-0.6-1.3-1.3-1.3H9.2c-0.7,0-1.3,0.6-1.3,1.3v1.1
+                    		C7.9,28.6,8.5,29.2,9.2,29.2z"></path> 
+ <path d="M22.1,32.3h-6.4c-0.7,0-1.3,0.6-1.3,1.3v1.1c0,0.7,0.6,1.3,1.3,1.3h6.4c0.7,0,1.3-0.6,1.3-1.3v-1.1
+                    		C23.4,32.9,22.8,32.3,22.1,32.3z"></path> 
+</g> 
+</svg> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="form-popup" id="scheduler" style="display:none"> <span class="close">x</span> 
+ <div class="card"> <div class="row"> <div id="secMod" class="col-md-6"> <div id="datepicker"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js">
+            </script> 
+ <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous">
+            </script> 
+</div> 
+ <div class="widget-1f5975 u_1752516391 dmCustomWidget" data-lazy-load="" data-title="" id="1752516391" dmle_extension="custom_extension" data-element-type="custom_extension" data-binding="W3siYmluZGluZ05hbWUiOiJjb3B5cmlnaHRUZXh0IiwidmFsdWUiOiJjb250ZW50X2xpYnJhcnkuZ2xvYmFsLmNvbXBhbnlfbmFtZSJ9XQ==" icon="false" surround="false" data-widget-id="1f5975986930429f819d4cd2154b5c4a" data-widget-version="22" data-widget-config="eyJjb3B5cmlnaHRUZXh0IjoiQ0VOVFJBTCBERSBQTE9NRVJPUyJ9"> <div class="copyright"> <div>&copy; 2025&nbsp;</div> 
+ <div>CENTRAL DE PLOMEROS</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link rel="preload" href="https://irp.cdn-website.com/fonts/css2?family=Roboto:wght@100;300;400;500;700;900&family=Montserrat:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Cabin:wght@400..700&family=Oswald:wght@200..700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&family=Playball:wght@400&amp;subset=latin-ext&amp;display=swap"  as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="preload" as="style" fetchpriority="low" onload="loadCSS(this)" href="https://static.cdn-website.com/mnlt/production/5257/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css" />
+
+<!-- End of RT CSS Include -->
+
+<link rel="preload" href="https://irp.cdn-website.com/WIDGET_CSS/4dad9cceab76be8f4993853ef9353a5f.css" id="widgetCSS" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+    height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+    body[data-page-alias="home"] #dm [data-show-on-page-only="home"] {
+        display: block !important;
+    }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/30bf6a54/files/30bf6a54_withFlex_1.min.css?v=114" id="siteGlobalCss" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+
+
+<style id="customWidgetStyle" type="text/css">
+    
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style
+        id="additionalGlobalCss" type="text/css"
+>
+</style>
+
+<!-- Page CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/30bf6a54/files/30bf6a54_home_withFlex_1.min.css?v=114" id="homeCssLink" as="style" fetchpriority="low" onload="loadCSS(this)" />
+
+<style id="pagestyle" type="text/css">
+    
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-22, .size-22, .size-22 > font { font-size: 22px !important; }.font-size-34, .size-34, .size-34 > font { font-size: 34px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+    if (!window.location.search) {
+        return;
+    }
+	const cleanParams = window.location.search.substring(1); // Strip ?
+	const queryParams = cleanParams.split('&');
+
+	const expires = 'expires=' + new Date().getTime() + 24 * 60 * 60 * 1000;
+	const domain = 'domain=' + window.location.hostname;
+	const path = "path=/";
+
+	queryParams.forEach((param) => {
+		const [key, value = ''] = param.split('=');
+		if (key.startsWith('utm_')) {
+			const cookieName = "_dm_rt_" + key.substring(4);
+			const cookie = cookieName + "=" + value;
+			const joined = [cookie, expires, domain, path].join(";");
+			document.cookie = joined;
+		}
+	});
+}());
+</script>
+<script type="text/javascript" >
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: '30bf6a54'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Cerrar (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Compartir"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Activar pantalla completa"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Acercar/alejar"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Anterior (flecha izquierda)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Siguiente (flecha derecha)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root"
+        data-locale="es_ES"></div>
+<!-- Alias: 30bf6a54 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+<!--  Begin Body End Markup -->
+<script data-inject="adn_datalayer">
+//<![CDATA[
+dataLayer = [ {'advertiserID':'119661373-12041916','advertiserName':'CENTRAL DE PLOMEROS','bcProduct':'413094601','propertyName':'Sitio ADN Basico (SACOM)','spCategoryName':'Plomerías y Artículos para','spLocationCode':'77516','spLocationName':'CANCUN','offerId':'','offerName':'','offerUnitPrice':''}];
+//]]>
+</script>
+<!-- Google Tag Manager --><script>
+//<![CDATA[
+
+
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TPV7RH9');
+ 
+ 
+//]]>
+</script>
+<!-- End Google Tag Manager --><!-- Google Tag Manager (noscript) --><noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPV7RH9" height="0" width="0" style="display:none;visibility:hidden">
+ </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) --><!--START AV4 --><!-- Google Tag Manager --><script>
+//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TDF8T7Z');
+//]]>
+</script>
+<!-- End Google Tag Manager -->
+ 
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Tag Manager (noscript) --><noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDF8T7Z" height="0" width="0" style="display:none;visibility:hidden">
+ </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) --><!--END AV4 --><!--  End Body End Markup -->
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+<!--  Begin Product Custom HTML Markup -->
+<script>
+if (srcList && Array.isArray(srcList)) {
+    srcList = srcList.map((src) => { 
+        if (!src || !src.id || src.id !== 'msgjs_onload') return src;
+
+        console.log('replacing mapbox key');
+        src.code = btoa(atob(src.code)
+            .replaceAll('pk.eyJ1IjoiMTJoYW5keiIsImEiOiJja3ljbTgxa24wcWdjMnFvOHF3NnJvdmJkIn0.01Ycqw_si2T_6fCxEkfRRA', 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw')
+        )
+
+        return src;
+    })
+}
+</script><!--  End Product Custom HTML Markup -->
+</body>
+</html>
